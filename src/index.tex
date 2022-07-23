@@ -1,0 +1,1061 @@
+\section {Assess Organizational Security with Network Reconnaisance Tools}
+
+\section {Explain Security Concerns with General Vulnerability Types}
+	\subsection {Software Vulnerabilities and Patch Management}
+		\begin{itemize}
+			\item Exploits for faults in software code
+			\item Applications
+			\item Operating System
+			\item Firmware \\
+				-- PC Firmware \\
+				-- Network Appliances and IOT Devices
+			\item Improper or Weak Patch Management \\
+				-- Undocumented Assets \\
+				-- Failed updates and removed patches
+		\end{itemize}
+	\subsection {Zero-Day and Legacy Platform Vulnerabilities}
+		\subsubsection {Zero-Day}
+			\begin{itemize}
+				\item Vulnerability is unknown to the vendor
+				\item Threat actor develops an exploit for which there is no patch
+				\item Likely to be used against high value targets
+			\end{itemize}
+		\subsubsection {Legacy Platform}
+			\begin{itemize}
+				\item Vendor no longer releases security patches
+			\end{itemize}
+	\subsection {Weak Host Configurations}
+		\begin{itemize}
+			\item Default Settings
+			\item Unsecured Root Accounts
+			\item Open Permissions
+		\end{itemize}
+	\subsection {Weak Network Configurations}
+		\subsubsection {Open ports and services}
+			\begin{itemize}
+				\item Restrict using an \textbf{Access Control List}
+				\item Disable unnecessary services or block ports
+				\item Block at network perimeter
+			\end{itemize}
+		\subsubsection {Unsecure Protocols}
+			Cleartext data transmissions are vulnerable to snooping
+		\subsubsection {Weak Encryption}
+			\begin{itemize}
+				\item Storage and transport encryption
+				\item Key is generated from a weak password
+				\item Cipher has weaknesses
+				\item Key distribution is not secure
+			\end{itemize}
+		\subsubsection {Error Messages}
+			Error messages reveal too much information
+	\subsection {Impacts from Vulnerabilites}
+		\begin{itemize}
+			\item Data breaches and data exfiltration impacts
+			\item Identity theft
+			\item Data loss and availability loss impacts
+			\item Financial and reputation impacts
+		\end{itemize}
+	\subsection {Third-Party Risks}
+		\begin{itemize}
+			\item Supply chains \\
+				-- Due diligence \\
+				-- Weak links
+			\item Vendor Management
+			\item Outsourced Code Development
+			\item Data storage
+			\item Cloud-based vs on-premises risks
+		\end{itemize}
+
+\section {Summarize Vulnerability Scanning Techniques}
+	\subsection {Security Assessment Frameworks}
+		\begin{itemize}
+			\item Methodology and scope for security assessments
+			\item NIST SP 800-115 -- Testing, examining, interviewing
+			\item Vulnerability assessment versus threat hunting and penetration testing
+			\item Vulnerability assessments can use a mix of \textbf{manual procedues}
+				and \textbf{automated scanning tools}
+		\end{itemize}
+	\subsection {Vulnerability Scan Types}
+		\begin{itemize}
+			\item Automated scanners configured with list of known vulnerabilities
+			\item Network vulnerability scanner
+			\item Application and web application scanners
+		\end{itemize}
+	\subsection {Common Vulnerabilities and Exposures}
+		\begin{itemize}
+			\item Vulnerability Feed/Plug-in/Test
+			\item Security Content Automation Protocol (SCAP)
+			\item Common Vulnerabilities and Exposures (CVE)
+			\item Common Vulnerability Scoring System (CVSS)
+		\end{itemize}
+	\subsection {Intrusive vs Non-Intrusive Scanning}
+		\begin{itemize}
+			\item Remote scanning vs Agent-based Scanning
+			\item Non-intrusive scanning \\
+				-- Passively test security controls \\
+				-- Scanners attach to network and only sniff traffic \\
+				-- Possibly some low-interaction with hosts
+			\item Intrusive/Active scanning \\
+				-- Establish network session \\
+				-- Agent-based scan
+		\end{itemize}
+	\subsection {Credentialed vs Non-credentialed Scanning}
+		\subsubsection {Non-credentialed}
+			\begin{itemize}
+				\item Anonymous or guest access only
+				\item Might test default passwords
+			\end{itemize}
+		\subsubsection {Credentialed}
+			\begin{itemize}
+				\item Scan configured with logon
+				\item Can allow privileged access to configuration settings/logs/registry
+				\item Use dedicated account for scanning
+			\end{itemize}
+	\subsection {Configuration Review}
+		\begin{itemize}
+			\item Lack of controls -- Security controls that should be present but are not
+			\item Misconfiguration -- Settings deviate from template configuration
+			\item Driven by templates of configuration settings
+			\item Compliance-based templates available in many products
+		\end{itemize}
+	\subsection {Threat Hunting}
+		\begin{itemize}
+			\item Use log and threat data to search for IOCs
+			\item Advisories and bulletins
+			\item Intelligence fusion and threat data
+			\item Maneuver
+		\end{itemize}
+
+\section {Explain Penetration Testing Concepts}
+	\subsection {Rules of Engagement}
+		\begin{itemize}
+			\item Agreement for objectives and scope
+			\item Authorization to proceed from system owner and affected third-parties
+			\item Attack profile \\
+				-- \textbf{Black box} (unknown environment) \\
+				-- \textbf{White Box} (known environment) \\
+				-- \textbf{Grey Box} (partially known)
+			\item Bug bounty programs
+		\end{itemize}
+	\subsection {Exercise Types}
+		\begin{itemize}
+			\item \textbf{Red Team} -- offensive role
+			\item \textbf{Blue Team} -- defensive role
+			\item \textbf{White Team} -- Sets the rules of engagement and monitors
+				the exercise
+			\item \textbf{Purple Team} -- red and blue share info and debrief regularly
+		\end{itemize}
+	\subsection {Pen Test Attack Life Cycle}
+		\subsubsection {Attack Life Cycle}
+			\begin{enumerate}
+				\item Initial exploitation
+				\item Persistence
+				\item Privilege escalation
+				\item Lateral movement
+				\item Pivoting
+				\item Actions on
+				\item Cleanup
+			\end{enumerate}
+		\subsubsection {Penetration Testing Life Cycle}
+			\begin{enumerate}
+				\item Information Gathering
+				\item Threat Modeling
+				\item Vulnerability Analysis
+				\item Exploitation
+				\item Post Exploitation
+				\item Reporting
+			\end{enumerate}
+
+\section {Identifying Social Engineering and Malware}
+	\subsection {Compare and Contrast Social Engineering Techniques}
+		\subsubsection {Social Engineering}
+			\begin{itemize}
+				\item "Hacking the Human"
+				\item Purposes of Social Engineering \\
+					-- Reconnaissance and eliciting information \\
+					-- Intrusion and gaining unauthorized access
+				\item Many Possible Scenarios \\
+				 	-- Persuade a user to run a malicious file \\
+					-- Contact a help desk and solicit information \\
+					-- Gain access to premises and install a monitoring device
+			\end{itemize}
+		\subsubsection {Reasons for Effectiveness}
+			\begin{itemize}
+				\item Familiarity/Liking -- Establish trust
+				\item Consensus/Social Proof -- Exploit polite behaviors
+				\item Authority and Intimidation -- Make target afraid to refuse
+				\item Scarcity and Urgency -- Rush the target into a decision
+			\end{itemize}
+		\subsubsection {Impersonation and Trust}
+			\begin{itemize}
+				\item Impersonation -- Pretend to be someone else
+				\item Pretexting -- Using a scenario with convincing additional detail
+				\item Trust -- Obtain and spoof data
+			\end{itemize}
+		\subsubsection {Dumpster Diving and Tailgating}
+			\begin{itemize}
+				\item Dumpster diving -- Steal documents and media from trash
+				\item Tailgating -- Access premises directly
+				\item Piggy backing -- Access premises without authorization
+			\end{itemize}
+		\subsubsection {Identity Fraud and Invoice Scams}
+			\begin{itemize}
+				\item Identity fraud -- Impersonation with convincing detail
+				\item Invoice scams -- Spoofing supplier details to submit invoices
+				\item Credential theft -- Credential Harvesting, shoulder surfing
+			\end{itemize}
+		\subsubsection {Phishing, Whaling, and Vishing}
+			\begin{itemize}
+				\item Trick target into using a malicious resource
+				\item Spoof legitimate communications
+				\item Spear phishing -- Highly targeted/tailored attack
+				\item Whaling -- Targets senior management
+				\item Vishing -- Using a voice channel
+				\item SMishing -- Using text messaging
+			\end{itemize}
+		\subsubsection {Spam, Hoaxes and Prepending}
+			\begin{itemize}
+				\item Spam -- unsolicited email, spam over instant messaging (SPiM)
+				\item Hoaxes -- Delivered as spam or malvertising, get user to install rdp
+				\item Prepending -- Tagging email subject line, warn users
+			\end{itemize}
+		\subsubsection {Pharming and Credential Harvesting}
+			\begin{itemize}
+				\item Passive Techniques have less risk of detection
+				\item Pharming -- DNS spoofing
+				\item Typosquatting -- Use cousin domains instead of redirection
+				\item Watering Hole -- Target a third party site
+				\item Credential Harvesting -- Attacks focused on obtaining credentials
+					for sale
+			\end{itemize}
+		\subsubsection {Influence Campaigns}
+			\begin{itemize}
+				\item Sophisticated threat actors use multiple resources to change opinions
+				\item Soft power -- Leveraging diplomatic and cultural assets
+				\item Hybrid warfare -- Use of espionage, disinformation, and hacking
+				\item Social media -- Use of hacked accounts and bot accounts
+			\end{itemize}
+	\subsection {Analyze Indicators of Malware-based Attacks}
+		\subsubsection {Malware Classification}
+			\begin{itemize}
+				\item Classification of vector or infection method
+				\item Viruses and worms -- spread code without authorization
+				\item Trojans -- malicious program concealed within a benign one
+				\item Potentially unwanted programs/applications (PUPs/PAPs) \\
+					-- Pre-installed bloatware or installed alongside another app \\
+					-- Installation may be covert \\
+					-- Also called grayware
+				\item Classification by payload	
+			\end{itemize}
+		\subsubsection {Computer Viruses}
+			\begin{itemize}
+				\item Rely on some sort of host file or media
+				\item Multipartite
+				\item Polymorphic
+				\item Vector for delivery
+			\end{itemize}
+		\subsubsection {Computer worms and Fileless malware}
+			\begin{itemize}
+				\item Early computer worms -- Propagate in memory over network links
+				\item Fileless malware -- Exploiting RCE and memory residence, shellcodes
+				\item Advanced Persistent Threats(APT)/Advanced Volatile Threat(AVT)/
+					Low Observable Characteristics(LOC)
+			\end{itemize}
+		\subsubsection {Backdoors and Remote Access Trojans}
+			\begin{itemize}
+				\item Backdoor malware
+				\item Remote access trojans (RATs)
+				\item Bots and Trojans
+				\item Command and Control (C2)
+				\item Backdoors from misconfiguration and unauthorized software
+			\end{itemize}
+		\subsubsection {Rootkits}
+			\begin{itemize}
+				\item Local administrator vs System/root privileges
+				\item Replace key system files and utilities
+				\item Purge log files
+				\item Firmware rootkits
+			\end{itemize}
+		\subsubsection {Ransomware, Crypto-Malware, and Logic Bombs}
+			\begin{itemize}
+				\item Ransomware -- Nuisance (lock out user by replacing shell)
+				\item Crypto-malware -- High impact ransomware (encrypt data files)
+				\item Cryptomining/cryptojacking) -- Hijack resources to mine crypto
+				\item Logic bombs
+			\end{itemize}
+		\subsubsection {Malware indicators}
+			\begin{itemize}
+				\item Browser changes or overt ransomware notification
+				\item Anti-virus notifications -- Behavior based analysis
+				\item Sandbox execution -- Cuckoo
+				\item Resource utilization/consumption -- Task manager and top
+				\item File system changes -- registry, temp files
+			\end{itemize}
+		\subsubsection {Process Analysis}
+			\begin{itemize}
+				\item Signature-based detection is failing to identify modern APT
+				\item Network and host behavior anomalies and drive detection methods
+				\item Running process analysis -- Process explorer
+				\item Logging activity -- System Monitor
+				\item Network Activity
+			\end{itemize}
+
+\section {Summarizing Basic Cryptographic Concepts}
+	\subsection {Cryptographic Concepts}
+		\begin{itemize}
+			\item Encryption and Decryption -- encoding and decoding \\
+				-- Plaintext is the decoded message \\
+				-- Ciphertext is the coded message \\
+				-- Cipher is the means of change of algorithm \\
+				-- Cryptanalysis is the art of cracking crypto systems
+			\item Alice(Sender), Bob(Receiver), Mallory(Intruder)
+		\end{itemize}
+	\subsection {Hashing Algorithms}
+		\begin{itemize}
+			\item Fixed length hash from variable string with cryptographic properties
+			\item Used for password storage and checksums(integrity)
+			\item Secure Hashing Algorithms(SHA)
+			\item Message Digest Algorithms(MD5)
+		\end{itemize}
+		% TODO Put Hashing Table Here
+	\subsection {Encryption Ciphers and Keys}
+		\begin{itemize}
+			\item Hashing is not encryption --- the process is not reversible
+			\item Encryption uses a reversible process based on a secret
+			\item Process should be too complex to unravel without a secret
+			\item Cannot keep the cipher/algorithm itself secret
+			\item Key ensures ciphertext remains protected
+			\item Protecting the key is easier than protecting the algorithm
+		\end{itemize}
+	\subsection {Symmetric Encryption}
+		\begin{itemize}
+			\item Same secret key is used for encryption and decryption
+			\item Fast -- suitable for bulk encryption of large amounts of data
+			\item Problem storing and distributing key securely
+			\item Confidentiality only -- sender and recipient know the same key
+		\end{itemize}
+	\subsection {Stream and Block Ciphers}
+		\begin{itemize}
+			\item Stream ciphers -- decrypt/encrypt bit/byte at a time \\
+				-- Must be used with an initialization vector (IV)
+			\item Block ciphers -- Treat data as equal blocks, using padding as necessary
+			\item Key length \\
+				-- Range of key values is the keyspace \\
+				-- Longer key bit means larger keyspace \\
+				-- Strength of key of given length varies between ciphers
+		\end{itemize}
+	\subsection {Asymmetric Encryption}
+		\begin{itemize}
+			\item Public/private key pair \\
+				-- If the public key encrypts, only the private key can decrypt \\
+				-- If the private key encrypts, only the public key can decrypt \\
+				-- Public key cannot be derived from the private key \\
+				-- \textbf{Private key} must be kept secret \\
+				-- \textbf{Public key} is easy to distribute
+			\item Message size is limited to key size so not suitable for large amounts
+				of data
+			\item Used for small amounts of authentication data
+		\end{itemize}
+	\subsection {Public Key Algorithms}
+		\begin{itemize}
+			\item RSA algorithm (Rivest, Shamir, Adleman) \\
+				-- Basis of many public key cryptography systems \\
+				-- Trapdoor function
+			\item Elliptical Curve
+		\end{itemize}
+	\subsection {Summarize Cryptographic Use Cases and Weaknesses}
+		\subsubsection {Digital Signatures}
+			\begin{itemize}
+				\item Using public key for hashing
+				\item Digital signature provide integrity, authentication and
+					non-repudiation
+				\item RSA-based digital signatures
+				\item Digital Signature Algorithm (DSA) with ECC Cipher
+			\end{itemize}
+		\subsubsection {Digital Envelopes and Signatures}
+			\begin{enumerate}
+				\item Alice obtains a copy of Bob's public key
+				\item Alice encrypts a file using a symmetric key
+				\item Alice encrypts the symmetric key using Bob's public key
+				\item Alice sends the ciphertext and encrypted symmetric key to Bob
+				\item Bob decrypts the symmetric key with his symmetric key
+				\item Bob decrypts the ciphertext with symmetric key
+			\end{enumerate}
+		\subsubsection {Digital Certificates}
+			\begin{itemize}
+				\item Wrapper for a public key to associate with a digital identity
+				\item Both parties must trust the CA (Certificate Authority)
+			\end{itemize}
+		\subsubsection {Perfect Forward Secrecry}
+			\begin{itemize}
+				\item RSA Key decrypts the session key using the server private key
+				\item The private key stored on the server may be compromised in the future
+			\end{itemize}
+		\subsubsection {Authenticated Modes of Operation}
+			\begin{itemize}	
+				\item Unauthenticated encryption
+				\item Authenticated encryption \\
+					-- \textbf{Message authentication code} -- provides authentication and
+						integrity \\
+					-- Uses AES CBC with HMAC-SHA
+				\item Authenticated encryption with Additional Data (AEAD)
+			\end{itemize}
+		\subsubsection{Cryptography Supporting Confidentiality}
+			\begin{itemize}
+				\item Hybrid encryption
+				\item File encryption
+				\item Transport encryption
+			\end{itemize}
+
+\section {Implementing Public Key Infrastructure}
+	\subsection {Private and Public Key Usage}
+		\begin{itemize}
+			\item Public Key Cryptography \\
+				-- \textbf{Public Key} encrypts the message \\
+				-- \textbf{Private Keys} decrypt and authenticate the message
+		\end{itemize}
+	\subsection {Certificate Authorities}
+	\subsection {PKI Trust Models and Certificate Chaining}
+		\begin{itemize}
+			\item Single CA
+			\item Hierarchical / Chain of trust -- Root CA, Intermediate CAs, Leaf
+			\item Online vs Offline
+		\end{itemize}
+	\subsection {Registration and CSRs}
+		\begin{itemize}
+			\item Registration identification and authentication procedures
+			\item Certificate Signing Request (CSR) \\
+				-- Client generates key pair and sends public key to CA with CSR \\
+				-- CA performs subject identity checks \\
+				-- CA signs and issues certificate
+			\item Registration Authority  (RA)
+		\end{itemize}
+	\subsection {Digital Certificates}
+	\subsection {Types of Cetrtificates}
+		\begin{itemize}
+			\item Certificate policies and templates
+			\item Key usage
+			\item Extended key/Enhanced Key Usage
+			\item Critical or Non-Critical
+		\end{itemize}
+	\subsection {Web Server Certificate Types}
+		\begin{itemize}
+			\item Domain validation (DV) -- more rigorous identity checks
+			\item Extended Validation (EV) -- even more rigorous identity checks \\
+				-- They do not allow domains with wildcards
+		\end{itemize}
+	\subsection {Other Certificate Types}
+		\begin{itemize}
+			\item Machine/computer
+			\item Email/user certificate -- identify by email address
+			\item Code signing -- validate publisher name
+			\item Root certificate -- self-signed for CA
+			\item Self-signed certificate -- must by manually trusted
+		\end{itemize}
+
+\section {Implement PKI Management}
+	\subsection {Key Recovery and Escrow}
+		\begin{itemize}
+			\item \textbf{M-of-N} for critical keys(root servers)
+			\item Keys can be backed up to protect against data loss
+			\item Escrow backup -- placing archived keys with a trusted third party
+		\end{itemize}
+	\subsection {Certificate Expiration}
+		\begin{itemize}
+			\item Certificate duration
+			\item Certificate renewal -- use existing key pair, re-key with generated pair
+			\item Expiration -- public key no longer accepted, archive/destroy
+		\end{itemize}
+	\subsection {Certificate Revocation Lists}
+		\begin{itemize}
+			\item Revocation vs suspension
+			\item Reason codes
+			\item Certificate Revocation List(CRL) -- lists revoked and suspended \\
+				-- Browser CRL Checking
+		\end{itemize}
+	\subsection {Online Certificate Status Protocol Responders}
+		\begin{itemize}
+			\item Online Certificate Status Protocol -- Client queries single cert
+			\item OCSP Stapling
+		\end{itemize}
+	\subsection {Certificate Pinning}
+	\subsection {Certificate Formats}
+		\begin{itemize}
+			\item Distinguished Encoding Rules (DER) -- Binary Format (Windows)
+			\item Privacy-enhanced Electrnonic Mail (PEM)
+			\item .CER (Windows and Linux)  and .CRT(Linux) file formats
+			\item Personal information exchange
+			\item Export a certificate chain
+		\end{itemize}
+	\subsection {OpenSSL}
+		\begin{itemize}
+			\item Windows Certificate Services and \texttt{certutil}/Powershell
+			\item OpenSSL \\
+				-- Key pair generation and CA root certificate \\
+				-- Certificate requests \\
+				-- Viewing and verifying certificates \\
+		\end{itemize}
+	\subsection{Certificate Issues}
+		\begin{itemize}
+			\item Troubleshoot rejection of certificates by servers and clients
+			\item Audit certificate and PKI infrastracture
+		\end{itemize}
+
+\section {Implementing Authentication Controls}
+	\subsection {Identity and Access Management}
+		\begin{itemize}
+			\item \textbf{Subjects} -- users/software that request access
+			\item \textbf{Objects} -- resources such as networks, servers, data
+			\item \textbf{Identification} -- subject + computer network account
+			\item \textbf{Authentication} -- Challenge to subject
+			\item \textbf{Authorization} -- rights and permissions assigned
+			\item \textbf{Accounting} -- auditing use of the account
+			\item AAA Services -- Authentication, Authorization, Accounting
+		\end{itemize}
+	\subsection {Authentication Factors}
+		\begin{itemize}
+			\item Something you know -- password, pin, challenge questions
+			\item Something you have -- ownership factor, hardware tokens, 2fa
+			\item Something you are -- biometric factor
+			\item It's important to have multiple forms of these
+		\end{itemize}
+	\subsection {Authentication Design}
+		\begin{itemize}
+			\item Meet requirements for CIA triad
+			\item Confidentiality -- keep credentials secure
+			\item Integrity -- threat actors cannot bypass or subvert auth mechanism
+			\item Availability -- does not cause undue delay or support issues 
+				(99.99% uptime)
+		\end{itemize}
+	\subsection {Multifactor Authentication}
+		\begin{itemize}
+			\item Strong authentication requires two or three types
+				-- Knowledge factor is weak in terms of confidentiality
+			\item Multifactor Authentication (MFA)
+			\item Two-Factor Authentication (2FA) -- must be two \textbf{different}
+				factors
+		\end{itemize}
+	\subsection {Authentication Attributes}
+		\begin{itemize}
+			\item Somewhere you are -- geolocation, IP location, geofencing
+			\item Something you can do -- unique action patterns like the way you
+				hold your phone
+			\item Something you can exhibit -- a behavior or personality trait
+			\item Someone you know -- web of trust, you have to know another individual
+		\end{itemize}
+
+\section {Implement Knowledge-Based Authentication}
+	\subsection {Local, Network and Remote Authentication}
+		\begin{itemize}
+			\item Authentication Providers -- passwords vs password hashes
+			\item Windows authentication -- local sign-in, network(Kerberos), remote
+			\item Linux authentication -- /etc/passwd and /etc/shadow,
+				pluggable authentication modules (PAMs)
+			\item Single Sign-On(SSO)
+		\end{itemize}
+	\subsection {Kerberos Authentication}
+		\begin{itemize}
+			\item SSO and authentication provider
+			\item Clients
+			\item Application Servers
+			\item Key Distribution Center(KDC) \\
+				-- Authentication service -- Ticket Granting Ticket \\
+				-- Ticket Granting Service -- Service Ticket
+		\end{itemize}
+	\subsection {PAP, CHAP, MS-CHAP Authentication}
+		\begin{itemize}
+			\item Password Authentication Protocol -- unsecure unless under encrypted
+				tunnel
+			\item Challenge Handshake Authentication Protocol (CHAP) -- similar to NTLM \\
+				-- repeated during the session to prevent replay attacks \\
+				-- various implementations \\
+				-- Not secure enough to use without encrypted tunnel
+		\end{itemize}
+	\subsection {Password Attacks}
+		\begin{itemize}
+			\item Plaintext/unencrypted -- sniffing from unsecure controls/repos
+			\item Online password attacks -- interaction with authentication service
+			\item Horizontal brute forcing/password spraying
+			\item Offline attacks \\
+				-- Password database \\
+				-- Hash transmitted directly \\
+				-- Hash used as key to sign as HMAC
+		\end{itemize}
+	\subsection {Brute force and Dictionary Attacks}
+		\begin{itemize}
+			\item Exploit weak user/pass combinations and mechanisms
+			\item Brute force attack
+			\item Dictionary attack -- rainbow tables, salt
+			\item Hybrid attack -- dictionary + bruteforce, fuzzing of dictionary terms
+		\end{itemize}
+	\subsection {Authentication Management}
+		\begin{itemize}
+			\item Hardware and software for storing and submitting multiple user passwords
+			\item Password key -- USB token, bluetooth/NFC
+		\end{itemize}
+
+\section {Implementing Authentication Technologies}
+	\subsection {Smart Card Authentication}
+		\begin{itemize}
+			\item Kerberos-based smart card logon
+			\item Card readers
+		\end{itemize}
+	\subsection {Key Management Devices}
+		\begin{itemize}
+			\item Provision keys with insider threat risk reduced
+			\item Smart cards and usb keys
+			\item Trusted platform module (TPM) -- virtual smartcards
+			\item Hardware Security Module (HSM) \\
+			 -- Provision keys across the network \\
+			 -- Key archive and escrow \\
+		\end{itemize}
+	\subsection{Extensible Authentication Protocol/IEEE 802.1X}
+		\begin{itemize}
+			\item Authenticate user at network access devices
+			\item Extensible authentication protocol
+			\item IEEE 802.1X Port Based Network Access Control \\
+				-- Supplicant, network access server (NAS), AAA server
+		\end{itemize}
+	\subsection{Terminal Access Controller Access-Control System}
+		\begin{itemize}
+			\item TACACS+
+			\item Centralizing admin logins
+			\item Reliable TCP Transport (over \textbf{port 49})
+		\end{itemize}
+	\subsection{Token Keys and Static Codes}
+		\begin{itemize}
+			\item One-time password
+			\item Static code -- "dumb" smart cards
+			\item Fast Identity Online (FIDO), Universal Second Factor
+		\end{itemize}
+	\subsection{Open Authentication (OAUTH)}
+		\begin{itemize}
+			\item HMAC-based one-time password (HOTP)
+			\item Time based One-time Passowrd (TOTP)
+		\end{itemize}
+	\subsection{2-Step Verification}
+		\begin{itemize}
+			\item Transmit a code via out-of-band channel
+			\item Possibility of interception
+		\end{itemize}
+
+\section{Biometric Authentication}
+	\subsection{Biometric Authentication}
+		\begin{itemize}
+			\item Enrollment -- sensor and feature extraction
+			\item Efficacy rates and considerations \\
+				-- \textbf{False rejection rates (FRR)} or Type I error \\
+				-- \textbf{False acceptance rates (FAR)} or Type II error \\
+				-- \textbf{Crossover Error Rate (CER)} \\
+				-- Throughput, failure to enrol, cost/implementation \\
+				-- Privacy concerns and accessibility concerns
+		\end{itemize}
+	\subsection {Fingerprint recognition}
+		\begin{itemize}
+			\item Fingerprint sensors -- small capacitive cells, vuln to spoofing
+			\item Vein Matching(vascular biometrics) -- more complex scanner
+		\end{itemize}
+	\subsection {Facial Recognition}
+		\begin{itemize}
+			\item Facial Recognition -- relatively slow, privacy issues, FAR, FRR
+			\item Retinal Scan -- pattern of blood vessels, relatively intrusive/complex
+			\item Iris scan -- more vulnerable to spoofing
+		\end{itemize}
+	\subsection {Behavioral Technologies}
+		\begin{itemize}
+			\item Something you do -- voice recognition, gait, signature
+			\item Other uses than authentication -- identification/alerting
+		\end{itemize}
+	
+\section {Implement Identity and account types}
+	\subsection {Identity Management Controls}
+		\begin{itemize}
+			\item Certificates and smart cards
+			\item Tokens -- single sign-on, avoids need to authenticate every service
+			\item Identity providers
+		\end{itemize}
+	\subsection {Background Check and On board Policies}
+		\begin{itemize}
+			\item HR and personnel policies -- recruiting, operation, termination
+			\item Background Check
+			\item Onboarding -- welcoming, account provisioning, issuing creds, training
+			\item Non-Disclosure Agreement (NDA)
+		\end{itemize}
+	\subsection {Personnel Policies for Privilege Management}
+		\begin{itemize}
+			\item Mitigate insider threat
+			\item Separation of duties -- shared authority
+			\item Least Privilege -- assign sufficient permissions only
+			\item Job rotation -- distribute institutional knowledge,
+				reduce critical dependencies
+			\item Mandatory vacations
+		\end{itemize}
+	\subsection {Offboarding Policies}
+		\begin{itemize}
+			\item Identity and access management checks
+			\item Retrieving company assets
+			\item Returning personal assets
+			\item Consider shared/generic accounts
+		\end{itemize}
+	\subsection {Security account types and Credential Management}
+		\begin{itemize}
+			\item Standard users -- limited privileges, not able to configure
+			\item Credential management policies for personnel -- password policies
+			\item Guest accounts -- no credentials, must have very limited privileges
+		\end{itemize}
+	\subsection {Security Group-Based Privileges}
+		\begin{itemize}
+			\item User-assigned privileges -- unmanageable if large
+			\item Group-based privileges -- assign users to relevant groups
+		\end{itemize}
+	\subsection {Administrator/Root Accounts}
+		\begin{itemize}
+			\item \textbf{Privileged/admin accounts} -- can change system config
+			\item \textbf{Generic/admin/root/superuser} -- often disabled or use restricted
+			\item \textbf{Administrator credential policies} -- least amount of privileges
+				and use MFA
+			\item \textbf{Default Security Groups} -- admin/sudoers file
+		\end{itemize}
+	\subsection {Service accounts}
+		\begin{itemize}
+			\item \textbf{Windows Service Accounts} -- system/local/network
+			\item \textbf{Linux accounts to run services} -- deny shell access (nologin)
+			\item Managing shared service account credentials
+		\end{itemize}
+	\subsection {Shared/Generic/Device Acccounts and Credentials}
+		\begin{itemize}
+			\item Shared Accounts -- Accounts whose credentials are shared
+			\item Generic Accounts -- created by default, might use default password
+			\item Risks from shared and generic accounts -- breaks non-repudiation
+			\item Credential policies for devices
+			\item Privilege access management software
+		\end{itemize}
+	\subsection {SSH Keys and Third-party Credentials}
+		\begin{itemize}
+			\item SSH keys used for remote access -- server holds copy of users pulic keys
+			\item Third party credentials -- manage cloud service, highly vulnerable
+		\end{itemize}
+
+\section {Account Policies}
+	\subsection {Account Attributes and Access Policies}
+		\begin{itemize}
+		 	\item Account Attributes
+		 		\begin{itemize}
+					Security ID, account name, credential
+					Extended profile attributes
+					Per-app settings and files
+				\end{itemize}
+			\item Access Policies
+		\end{itemize}
+	\subsection {Account Password Policy Settings}
+		\begin{itemize}
+			\item Length
+			\item Complexity
+			\item Aging
+			\item History and Use
+			\item NIST Guidance
+			\item Password Hints
+		\end{itemize}
+	\subsection {Account Restrictions}
+		\begin{itemize}
+			\item Network location -- VLAN, IP subnet, remote IP, remote logon
+			\item Geolocation -- By IP Address, Location Settings, Geofencing, Geotagging
+			\item Time-based restrictions -- Logon hours, Logon duration, Impossible
+				travel time/risky login
+		\end{itemize}
+	\subsection {Account Audits}
+		\begin{itemize}
+			\item Accounting and account auditing to detect account misuse 
+				\begin{itemize}
+					\item Use of file permissions to read and modify data
+					\item Failed login or resource access attempts
+				\end{itemize}
+			\item Recertification
+				\begin{itemize}
+					\item Monitoring use of privileges
+					\item Granting/revoking privileges
+					\item Communicating between IT/HR
+				\end{itemize}
+		\end{itemize}
+	\subsection {Account Permissions}
+		\begin{itemize}
+			\item Impact of improperly configured accounts
+			\item Escalating and revoking privileges
+			\item Permission and auditing tools
+		\end{itemize}
+	\subsection {Usage Audits}
+		\begin{itemize}
+			\item Account logon and management events
+			\item Process Creation
+			\item Object Access (file system/file shares)
+			\item Changes to audit policy
+			\item Changes to system security and integrity
+		\end{itemize}
+	\subsection {Account Lockout and Disablement}
+		\begin{itemize}
+			\item Disablement
+				\begin{itemize}
+					\item Login disabled until manually reenabled
+					\item Combine with remote logoff
+				\end{itemize}
+			\item Lockout
+				\begin{itemize}
+					\item Login is prevented for a period then reenabled
+					\item Policies to enforce automatic lockout
+				\end{itemize}
+		\end{itemize}
+	\subsection {Discretionary and Role-Based Access Control}
+		\begin{itemize}
+			\item Access control model -- permissions/rights
+			\item Discretionary Access Control
+				\begin{itemize}
+					\item Based on resource ownership
+					\item Access Control Lists(ACLs)
+					\item Vulnerable to compromised privileged user accounts
+				\end{itemize}
+			\item Role-Based Access Control (RBAC)
+				\begin{itemize}
+					\item Non-discretionary and more centralized control
+					\item Based on defining roles then allocating users to roles
+					\item Users should only inherit role permissions
+				\end{itemize}
+		\end{itemize}
+	\subsection {File System Security}
+		\begin{itemize}
+			\item Access Control List (ACL)
+			\item Access Control Entry (ACE)
+			\item File System Support
+			\item Linux permissions and chmod
+				\begin{itemize}
+					\item Symbolic (rwx)
+					\item User, group and world
+					\item Octal
+				\end{itemize}
+		\end{itemize}
+	\subsection {Mandatory and Attribute Access Control}
+		\begin{itemize}
+			\item Mandatory Access Control (MAC)
+				\begin{itemize}
+					\item Labels and clearance
+					\item System policies to restrict access
+				\end{itemize}
+			\item Attribute-Based Access Control (ABAC)
+				\begin{itemize}
+					\item Conditional Access
+				\end{itemize}
+		\end{itemize}
+	\subsection {Rule-Based Access Control}
+		\begin{itemize}
+			\item Non-discretionary
+			\item Conditional Access
+			\item Privileged access management
+		\end{itemize}
+	\subsection {Directory Services}
+		\begin{itemize}
+			\item Database of subjects
+			\item Access Control Lists
+			\item X.500 and lightweight directory access protocol (LDAP)
+				\begin{itemize}
+					\item Distinguished names
+					\item Attribute=value pairs
+				\end{itemize}
+		\end{itemize}
+	\subsection {Federation and Attestation}
+		\begin{itemize}
+			\item Federated Identity Management
+				\begin{itemize}			
+					\item Networks under separate administrative control share users
+				\end{itemize}
+			\item Identity providers and attestation
+			\item Cloud vs On-premises requirements
+		\end{itemize}
+	\subsection {Security Assertions and Markup Language}
+		\begin{itemize}
+			\item Open standard for implementing identity and service provider comms
+			\item Attestations/assertions
+				\begin{itemize}
+					\item XML format
+					\item signed using xml 
+				\end{itemize}
+		\end{itemize}
+	\subsection {OAuth and OpenID Connect}
+		\begin{itemize}
+			\item ``User centric'' services better suited for consumer websites
+			\item OAuth -- Communicate authorizations rather than explicitly authenticate
+		\end{itemize}
+
+\section {Explain the Importance of Personnel Policies}
+	\subsection{Conduct Policies}
+		\begin{itemize}
+			\item Acceptable Use Policy (AUP)
+			\item Rules of Behavior and social media analysis
+			\item Uses of personally owned devices
+				\begin{itemize}
+					\item Bring your own device
+					\item Shadow IT
+				\end{itemize}
+			\item Clean desk
+		\end{itemize}
+	\subsection {User and Role-based Training}
+		\begin{itemize}
+			\item Impacts and risks from untrained users
+			\item Topics for security awareness
+			\item Role-based Training
+				\begin{itemize}
+					\item Appropriate Language
+					\item Level of Technical Content
+				\end{itemize}
+		\end{itemize}
+	\subsection {Diversity of Training Techniques}
+		\begin{itemize}
+			\item Engagement and retention
+			\item Training delivery methods
+			\item Phishing campaigns
+			\item Capture the flag
+			\item Computer-based training (CBT)
+		\end{itemize}
+
+\section {Implementing Secure Network Designs}
+	\subsection {Secure Network Design}
+		\begin{itemize}
+			\item Problems and weaknesses
+				\begin{itemize}
+					\item Single point of failure
+					\item Complex dependencies
+					\item Availability over confidentiality and integrity
+					\item Lack of documentation and change control
+					\item Overdependence on perimeter security
+				\end{itemize}
+			\item Best practice design and architecture guides
+				\begin{itemize}
+					\item Cisco SAFE architecture
+					\item Places in the network
+				\end{itemize}
+		\end{itemize}
+	\subsection {Business Workflows and Network Architecture}
+		\begin{itemize}
+			\item Corporate Network
+				\begin{itemize}
+					\item Access
+					\item Email Server
+					\item Mail transfer server
+				\end{itemize}
+			\item Segmentation
+			\item Data flow and access controls
+		\end{itemize}
+	\subsection {Routing and Switching Protocols}
+		\begin{itemize}
+			\item Forwarding -- Layer 2, 3
+			\item Address Resolution Protocol (ARP) -- Map MAC addresses to IP
+			\item Internet Protocol (IP) -- IPv4 and IPv6, network prefix/subnet
+				\begin{itemize}
+					\item IPv4 with 192.168... is private
+					\item IPv6 fe80:: is private
+				\end{itemize}
+			\item Routing protocols -- communicate routing table updates
+		\end{itemize}
+	\subsection {Network Segmentation}
+		\begin{itemize}
+			\item Network Segmentation -- nodes communicate at layer 2
+			\item Implement network segments -- unmanaged switches, VLANs for managed
+			\item Layer 3 subnets -- Map subnets to VLANs
+		\end{itemize}
+	\subsection {Network Topology and Zones}
+		\begin{itemize}
+			\item Physical and network topologies
+			\item Zones represent isolated segments
+			\item Traffic between zones is subject to filtering by a firewall
+			\item Main zone types -- intranet(private), extranet, internet(public)
+			\item Enterprise architecture zones
+		\end{itemize}
+	\subsection {Demilitarized Zones}
+		\begin{itemize}
+			\item DMZs isolate hosts that are Internet-facing
+			\item Communications through the DMZ should not be allowed
+			\item Ideally use proxies to rebuild packets for forwarding
+			\item Bastion Hosts
+				\begin{itemize}
+					\item Not fully trusted by internal network
+					\item Run minimal services
+					\item Do not store local network account credentials
+				\end{itemize}
+		\end{itemize}
+	\subsection {Screened Host}
+		\begin{itemize}
+			\item Screened host -- local network screened by a firewall
+		\end{itemize}
+	\subsection {Implications of IPv6}
+		\begin{itemize}
+			\item Enabled by default configuration issues
+			\item Map IPv6 address space to appropriate security zones
+			\item Configure secure IPv6 firewall rules
+			\item Typically no need for address translation
+		\end{itemize}
+	\subsection {Other Secure Network Design Considerations}
+		\begin{itemize}
+			\item Data center and cloud design requirements
+			\item East-west traffic -- within data center
+			\item North-south traffic -- leaving and entering data center
+			\item Zero trust -- do not rely solely on perimeter security
+				\begin{itemize}
+					\item Continuous/context-based auth
+					\item Microsegmentation
+				\end{itemize}
+		\end{itemize}
+
+\section {Implement Secure Switching and Routing}
+	\subsection {MITM and Layer 2 Attacks}
+		\begin{itemize}
+			\item MITM -- intercept and modify communications
+			\item Layer 2 Attacks -- easy to change MAC value
+		\end{itemize}
+	\subsection {Loop Prevention}
+		\begin{itemize}
+			\item Spanning Tree Protocol (STP)
+			\item Broadcast Storm Prevention
+			\item Bridge Protocol Data Unit (BPDU) Guard -- disable port if STP is detected
+		\end{itemize}
+	\subsection {Physical Port Security and MAC Filtering}
+		\begin{itemize}
+			\item Physical Port Security
+				\begin{itemize}
+					\item secure switch hardware
+					\item physically disconnect unused ports
+				\end{itemize}
+			\item MAC address limiting and filtering
+		\end{itemize}
+
+\section {Implement Secure Wireless Infrastructure}
+	\subsection {Wireless Network Installation Considerations}
+		\begin{itemize}
+			\item Ensure max availability
+			\item Wireless access point (WAP) placement
+			\item Site surveys and heat maps
+		\end{itemize}
+	\subsection {Controller and Access Point Security}
+		\begin{itemize}
+			\item Hardware and Software
+			\item Fat vs Thin WAPs
+		\end{itemize}
+	\subsection {Extensible Authentication Protocol}
+		\begin{itemize}
+			\item Designed for interoperable security devices
+		\end{itemize}
+
+\section {Implement Load Balancers}
+	\subsection {Load Balancing}
+		\begin{itemize}
+			\item Distributes requests across farm or pool of servers
+				\begin{itemize}
+					\item Layer 4 -- TCP, IP
+					\item Layer 7 -- Application level (content switch)
+				\end{itemize}
+			\item Scheduling
+				\begin{itemize}
+					\item Round robin
+					\item Fewest existing connections
+					\item Weighting
+					\item Hearbeat and health checks
+				\end{itemize}
+			\item Source IP affinity
+		\end{itemize}
