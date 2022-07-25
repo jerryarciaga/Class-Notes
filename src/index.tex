@@ -1058,4 +1058,451 @@
 					\item Hearbeat and health checks
 				\end{itemize}
 			\item Source IP affinity
+				\begin{itemize}
+					\item Persistence -- works by setting a cookie
+				\end{itemize}
+		\end{itemize}
+
+\section {Implement Firewalls and Proxy Servers}
+	\subsection {Packet Filtering Firewalls}
+		\begin{itemize}
+			\item Enforce a network to use Access Control Lists (ACLs)
+			\item Act to deny (block or drop), log or accept a packet
+			\item Inspect headers
+				\begin{itemize}
+					\item Source and destination IP address
+					\item Inbound, outbound, or both
+					\item Source and destinations port
+				\end{itemize}
+			\item Inbound, outbound, or both
+			\item Stateless
+		\end{itemize}
+	\subsection {Stateful inspection firewalls}
+		\begin{itemize}
+			\item Stores connection information
+			\item Layer 4
+				\begin{itemize}
+					\item TCP Handshake
+					\item New vs Established and related connection
+				\end{itemize}
+			\item Application Layer (Layer 7)
+				\begin{itemize}
+					\item Validate protocol
+					\item Match threat signature
+				\end{itemize}
+		\end{itemize}
+	\subsection {Firewall Implementation}
+		\begin{itemize}
+			\item Firewall Appliances
+				\begin{itemize}
+					\item Routed (Layer 3)
+					\item Bridged/transparent (Layer 2)
+					\item Router/Firewall
+				\end{itemize}
+			\item Application Firewalls
+				\begin{itemize}
+					\item Host-based (Personal)
+					\item Application firewall
+					\item Network operation (NOS) firewall
+				\end{itemize}
+		\end{itemize}
+	\subsection {Proxies and Gateways}
+		\begin{itemize}
+			\item Forward proxy server
+				\begin{itemize}
+					\item Opens connections with external on behalf of internal clients
+					\item Application-specific filters
+				\end{itemize}
+			\item Reverse proxy server
+				\begin{itemize}
+					\item Proxy opens connections with internal servers on behalf of
+						external clients
+				\end{itemize}
+		\end{itemize}
+	\subsection {Access control lists}
+		\begin{itemize}
+			\item Least access
+			\item Top to bottom processing
+			\item Implicit Deny
+			\item Explicit Deny all
+			\item Criteria for rules (tuples)
+			\item Documenting and testing configuration
+		\end{itemize}
+	\subsection {Network Address Translation}
+		\begin{itemize}
+			\item Translate private IP address to public IP address
+			\item Source NAT
+				\begin{itemize}
+					\item Static and dynamic NAT
+					\item Overloaded NAT/Network Address Port Translation (NAPT)
+				\end{itemize}
+			\item Destination NAT/port forwarding
+				\begin{itemize}
+					\item Advertise a resource using a global IP address but forward
+						it to a local IP address
+				\end{itemize}
+		\end{itemize}
+	\subsection {Virtual Firewalls}
+		\begin{itemize}
+			\item Hypervisor-based -- built-in filtering
+			\item Virtual appliance -- deployed as a virtual machine
+			\item Multiple context -- firewall appliance running multiple instances
+			\item East-west security design and microsegmentation
+		\end{itemize}
+	\subsection {Open-source vs Proprietary}
+		\begin{itemize}
+			\item Source code inspection and supply chain issues
+			\item Support arrangement and subscription features
+		\end{itemize}
+
+\section {Implement Network Security Monitoring}
+	\subsection {Network-based Intrusion Detection Systems}
+		\begin{itemize}
+			\item Intrusion Detection Systems
+			\item Network Sensor captures traffic
+			\item Detection engine performs real-time analysis of indicators
+			\item Passive logging/alerting
+		\end{itemize}
+	\subsection {TAPs and Port Mirrors}
+		\begin{itemize}
+			\item Sensor placement
+			\item Switched port analyzer (SPAN)/mirror port
+			\item Passive Test Access Point
+			\item Active TAP
+			\item Aggregation TAP
+		\end{itemize}
+	\subsection {Network-based Intrusion Prevention Systems}
+		\begin{itemize}
+			\item Intrusion Prevention System (IPS)
+			\item Active response to threats
+				\begin{itemize}
+					\item Reset Session
+					\item Apply firewall filters
+					\item Bandwidth throttling
+					\item Packet modification
+					\item Run a script or other process
+				\end{itemize}
+			\item Anti-virus scanning/content filtering
+			\item Inline placement--risk of failure
+		\end{itemize}
+	\subsection {User based detection}
+		\begin{itemize}
+			\item Analysis Engine
+			\item Signature-based detection
+				\begin{itemize}
+					\item Pattern matching
+					\item Database of known attack signatures
+					\item Must be updated with latest definition
+					\item Many attack tools do not conform to specific signatures
+				\end{itemize}
+		\end{itemize}
+	\subsection {Behavior and Anomaly-based Detection}
+		\begin{itemize}
+			\item Behavioral-based detection
+				\begin{itemize}
+					\item Train sensor with baseline normal behavior
+					\item Network behavior and anomaly detection (NBAD)
+					\item Heuristics (learning from experience)
+					\item Statistical model of behavior
+					\item Machine learning assisted analysis
+				\end{itemize}
+			\item Anomaly-based detection as irregularity in packet construction
+		\end{itemize}
+	\subsection {Next Generation Firewalls and Content Filters}
+		\begin{itemize}
+			\item Next-Generation firewall -- application-aware filtering, user
+				account-based filtering, IPS, cloud inspection
+			\item Unified Threat Management (UTM)
+			\item Content/URL Filter
+				\begin{itemize}
+					\item Focuses on outgoing user traffic
+					\item Content block lists and allow lists
+					\item Time-based restrictions
+					\item Secure web gateway(SWG)
+				\end{itemize}
+		\end{itemize}
+	\subsection {Host-based Intrusion Detection Systems}
+		\begin{itemize}
+			\item Host-based IDS -- Network, log, and file system monitoring for endpoints
+			\item File Integrity Monitoring (FIM)
+				\begin{itemize}
+					\item Cryptographic hash or file signature verifies integrity of files
+					\item Compare hashes manually
+					\item Windows file Protection/sfc
+					\item Tripwire and OSSEC
+				\end{itemize}
+		\end{itemize}
+	\subsection {Web Application Firewalls}
+		\begin{itemize}
+			\item Able to inspect HTTP Traffic
+			\item Matches suspicious code to vulnerability database
+			\item Can be implemented as software on host or as appliance
+		\end{itemize}
+	\subsection {Security Information and Event Management}
+		\begin{itemize}
+			\item Log collection
+				\begin{itemize}
+					\item Agent-based -- Local agent to forward logs
+					\item Listener/collector -- protocol based remote log
+					\item Sensor -- Packet capture and traffic flow data
+				\end{itemize}
+			\item Log aggregation
+				\begin{itemize}
+					\item Consolidation of multiple log formats to facilitate search/query
+					\item Normalization of fields
+					\item Time synchronization
+				\end{itemize}
+		\end{itemize}
+	\subsection {Analysis and Report Review}
+		\begin{itemize}
+			\item Correlation
+				\begin{itemize}
+					\item Relating security data and threat intelligence
+					\item Alerting of indicators of compromise
+					\item Basic rules vs machine learning
+				\end{itemize}
+			\item User and entity behavior analysis (UEBA)
+			\item Sentiment analysis
+			\item Security orchestration, automation and response(SOAR)
+		\end{itemize}
+	\subsection {File Manipulation}
+		\begin{itemize}
+			\item cat -- view contents of one or more files
+			\item head or tail -- view first and last lines of file
+			\item logger -- write system input to system log
+		\end{itemize}
+	\subsection {Regular Expressions and grep}
+		\begin{itemize}
+			\item Regular expression syntax -- Search operators, quantifiers
+			\item grep -- Searches file contents
+		\end{itemize}
+
+\section {Implementing Secure Network Protocols}
+	\subsection {Network Address Allocation}
+		\begin{itemize}
+			\item Dynamic vs Static IP address management
+			\item Dynamic Host Configuration Protocol (DHCP)
+			\item Prevent rogue DHCP Servers
+			\item Prevent DoS attacks (starvation) by rogue clients
+			\item Secure administration interface
+		\end{itemize}
+	\subsection {Domain Name Resolution}
+		\begin{itemize}
+			\item System for resolving host names and domain labels to IP addresses
+			\item Domain hijacking -- gain control of domain registration
+			\item Uniform Resource Locator (URL) redirection -- abuse of HTTP requests
+			\item Domain reputation -- monitor blocklists/reputation lists for abuse
+		\end{itemize}
+	\subsection {DNS Poisoning}
+		\begin{itemize}
+			\item Man In the Middle -- rogue DNS server intercepts queries
+			\item DNS client cache poisoning -- HOSTS file
+			\item DNS server cache poisoning
+		\end{itemize}
+	\subsection {DNS Security}
+		\begin{itemize}
+			\item DNS server security
+			\item DNS Server Security Extensions (DNSSEC)
+		\end{itemize}
+	\subsection {Secure Directory Services}
+		\begin{itemize}
+			\item Directory Services and Lightweight Directory Access Protocol (LDAP) --
+				port 389
+			\item Binding Methods
+				\begin{itemize}
+					\item None
+					\item Simple Authentication
+					\item Simple Authentication and Security Layer (SASL)
+					\item LDAPS (TLS over port 636)
+				\end{itemize}
+			\item Access control policy
+				\begin{itemize}
+					\item Read-only
+					\item Read/Write
+				\end{itemize}
+		\end{itemize}
+	\subsection {Time Synchronization}
+		\begin{itemize}
+			\item Time critical services
+				\begin{itemize}
+					\item Authentication
+					\item Logging
+					\item Task scheduling/backup
+				\end{itemize}
+			\item Network time protocol (NTP)
+				\begin{itemize}
+					\item Stratum 1 Servers
+					\item Stratum 2 Servers
+					\item Simple NTP (Clients)
+				\end{itemize}
+		\end{itemize}
+	\subsection {Simple Network Management Protocol Security}
+		\begin{itemize}
+			\item Simple Network Management Protocol (SNMP)
+			\item SNMP v1 and v2 feature no or weak authentication and no privacy
+			\item SNMP v3 encryption and authentication
+		\end{itemize}
+
+\section {Implement Secure Application Protocols}
+	\subsection {HTTP and Web Services}
+		\begin{itemize}
+			\item HTTP Headers and Payload
+			\item Web services/applications
+				\begin{itemize}
+					\item Forms mechanism allows client to upload data to server
+					\item Statelesss protocol but expanded with cookies and scripting
+				\end{itemize}
+		\end{itemize}
+	\subsection {Transport Layer Security}
+		\begin{itemize}
+			\item SSL/TLS -- Communications secured using host certificates
+			\item SSL/TLS versions
+			\item Cipher Suites
+				\begin{itemize}
+					\item Key exchange -- HMAC \texttt{ECDHE-RSA-AES128-GCM-SHA256}
+					\item TLS 1.3 uses shortened suites
+				\end{itemize}
+		\end{itemize}
+	\subsection {API Considerations}
+		\begin{itemize}
+			\item Application Programming Interface
+			\item API Keys
+				\begin{itemize}
+					\item Static keys
+					\item Authorization and Authentication via SAML/OAuth
+				\end{itemize}
+		\end{itemize}
+	\subsection {Subscription Services}
+		\begin{itemize}
+			\item News and subscription services
+			\item Provide secure access
+			\item News feed security
+		\end{itemize}
+	\subsection {File transfer services}
+		\begin{itemize}
+			\item SSH FTP (SFTP) -- run FTP over SSH on port 22
+			\item FTP over SSL (FTPS)
+		\end{itemize}
+	\subsection {Email Services}
+		\begin{itemize}
+			\item Simple Mail Transfer Protocol (SMTP)
+			\item Mailbox access protocols
+				\begin{itemize}
+					\item Post Office Protocol (POP3)
+					\item Internet Message Access Protocols (IMAP)
+					\item Secure ports
+						\begin{itemize}
+							\item POP3S port 995
+							\item IMAP port 993
+						\end{itemize}
+				\end{itemize}
+		\end{itemize}
+	\subsection {Secure/Multipurpose Internet Mail Extensions (S/MIME)}
+		\begin{itemize}
+			\item End-to-end encryption for message contents
+			\item Authentication and confidentiality using PKI certificates
+			\item Correspondents must exchange and trust certificates
+		\end{itemize}
+	\subsection {Voice and Video Protocol Security}
+		\begin{itemize}
+			\item VOIP, web conferencing, and video teleconferencing (VTC)
+				\begin{itemize}
+					\item Session control
+					\item Data transport
+					\item Quality of service
+				\end{itemize}
+			\item Session Initiation Protocol (SIP)
+			\item Secure Real-time Transport Protocol (SRTP) -- call data confidentiality
+		\end{itemize}
+
+\section {Implement Secure Remote Access Protocols}
+	\subsection {Remote Access Architecture}
+		\begin{itemize}
+			\item Remote (Client) Access VPN
+			\item Site-to-Site VPN
+		\end{itemize}
+	\subsection {Transport Layer Security VPN}
+		\begin{itemize}
+			\item Use TLS to negotiate a secure communication, auth'ed by PKI Certs
+			\item Tunnel network traffic over TLS
+			\item Can use TCP or UDP
+			\item OpenVPN
+				\begin{itemize}
+					\item TAP/bridged mode
+					\item TUN/routed mode
+				\end{itemize}
+			\item Secure Sockets Tunneling
+		\end{itemize}
+	\subsection {Internet Protocol Security (IPSec)}
+		\begin{itemize}
+			\item Network Layer Security
+			\item Provides confidentiality and/or Integrity
+			\item Authentication Header (AH)
+				\begin{itemize}
+					\item Signs packet but does not encrypt payload
+					\item Provides authentication/integrity only
+				\end{itemize}
+			\item Encapsulation Security Payload (ESP)
+				\begin{itemize}
+					\item Provides confientiality and/or integrity
+				\end{itemize}
+		\end{itemize}
+	\subsection{IPSec Transport and Tunnel Modes}
+		\begin{itemize}
+			\item Transport Mode -- host-to-host connections on a private network
+			\item Tunnel Mode -- between gateways
+		\end{itemize}
+	\subsection {Internet Key Exchange}
+		\begin{itemize}
+			\item IKE
+			\item Security Association (SA)
+			\item Endpoints must communicate a shared secret and confirm identity
+		\end{itemize}
+	\subsection {VPN Client Configuration}
+		\begin{itemize}
+			\item Native VPN client or third-party software install
+			\item Configuration
+				\begin{itemize}
+					\item VPN gateway address
+					\item Security type and user credentials
+					\item Client certificate install
+				\end{itemize}
+			\item Always-on VPN
+			\item Split tunnel
+			\item Full tunnel -- internet access is mediated by the corporate network
+		\end{itemize}
+	\subsection {Remote Desktop}
+		\begin{itemize}
+			\item GUI-based remote terminal software
+			\item Remote Desktop Protocol (RDP)
+			\item HTML5/Clientless
+		\end{itemize}
+	\subsection {Out-of-Band Management and Jump Servers}
+		\begin{itemize}
+			\item Secure admin workstations (SAWs)
+			\item OOB Management
+				\begin{itemize}
+					\item Serial/modem/console port
+					\item Virtual terminal
+					\item Separate cabling or VLAN isolation
+				\end{itemize}
+			\item Jump servers
+				\begin{itemize}
+					\item Single host accepts SSH or RDP connections from SAWs
+					\item Forwards connection to app servers
+					\item App servers only accept connections from jump servers
+				\end{itemize}
+		\end{itemize}
+	\subsection {Secure Shell (SSH)}
+		\begin{itemize}
+			\item Remote administration with public key cryptography security
+			\item Host key identifies server
+			\item Client authentication
+				\begin{itemize}
+					\item Username/Password
+					\item Public Key Authentication
+					\item Kerberos
+				\end{itemize}
+			\item Key Management
+			\item SSH Commands
 		\end{itemize}
