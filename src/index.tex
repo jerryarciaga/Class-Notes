@@ -1506,3 +1506,432 @@
 			\item Key Management
 			\item SSH Commands
 		\end{itemize}
+
+\section {Implementing Host Security Solutions}
+	\subsection {Implement Secure Firmware}
+		\subsubsection {Hardware Root of Trust}
+			\begin{itemize}
+				\item Hardware root of trust/anchor
+				\item Attestation
+				\item Trusted Platform Module (TPM)
+					\begin{itemize}
+						\item Hardware-based Storage of Cryptographic Data
+						\item Endorsement Key
+						\item Subkeys used in key storage, signature and
+							encryption operations
+						\item Ownership secured via password
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Boot Integrity}
+			\begin{itemize}
+				\item Unified Extensible Firmware Interface (UEFI)
+				\item Secure Boot -- validate digital signatures before running boot
+					loader or kernel
+				\item Measured Boot -- use TPM to measure hashes
+				\item Attestation -- Report boot metrics and signature
+			\end{itemize}
+		\subsubsection {Drive Encryption}
+			\begin{itemize}
+				\item Full Disk Encryption (FDE)
+					\begin{itemize}
+						\item Encryption key secured with user password
+						\item Secure Storage for key in TPM or USB
+					\end{itemize}
+				\item Self-encrypting Drives (SED)
+					\begin{itemize}
+						\item Data/media encrpytion key
+						\item Authentication Key(AK) or key encrypting key (KEK)
+						\item Opal specification compliant
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {USB and Flash Drive Security}
+			\begin{itemize}
+				\item BadUSB -- Exposes potential of malicious firmware
+				\item Sheep dip -- Sandbox system for testing new/suspect devices
+			\end{itemize}
+		\subsubsection {Third Party Risk Management}
+			\begin{itemize}
+				\item Supply chain and vendors
+					\begin{itemize}
+						\item End to end process supplying, manufacturing, distributing
+							and finally releasing goods and services to a customer
+						\item Consider implications of using second-hand equipment
+					\end{itemize}
+				\item Vendor vs business partners
+			\end{itemize}
+		\subsubsection {End of Life Systems and Lack of Vendor Support}
+			\begin{itemize}
+				\item Support lifecycles
+				\item End of Life (EOL)
+					\begin{itemize}
+						\item Product is no longer sold to new customers
+						\item Availability of spares and updates is reduced
+					\end{itemize}
+				\item End of Service Life (EOSL)
+					\begin{itemize}
+						\item Product is no longer supported
+					\end{itemize}
+				\item Lack of vendor support
+					\begin{itemize}
+						\item Abandonware
+						\item Software and peripherals/devices
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Organizational Security Agreements}
+			\begin{itemize}
+				\item Memorandum of Understanding (MOU) -- intent of working together
+				\item Business Partnership Agreements (BPA) -- establish relationship
+				\item Non-disclosure Agreement (NDA) -- govern use and storage of
+					confidential and private information
+				\item Service Level Agreement (SLA) -- metrics for service delivery and
+					performance (negotiations of uptime/downtime)
+				\item Measurement analysis (MSA) -- data collection and statistical
+					methods used for quality management
+			\end{itemize}
+	\subsection {Implement Endpoint Security}
+		\subsubsection {Host Hardening}
+			\begin{itemize}
+				\item Reducing attack surface
+				\item Interface -- network and peripheral connections and hardware ports
+				\item Services -- Software that allows client connections
+				\item Application service ports
+					\begin{itemize}
+						\item TCP and UDP ports
+						\item Disable application service or use firewall to control
+							access
+						\item Detect non-standard usage
+					\end{itemize}
+				\item Encryption for persistent storage
+			\end{itemize}
+		\subsubsection {Baseline Configuration and Registry Settings}
+			\begin{itemize}
+				\item OS/host role -- network appliance, server, client
+				\item Configuration baseline template
+				\item Registry settings and group policy objects (GPOs)
+				\item Malicious registry changes
+				\item Baseline deviation reporting
+			\end{itemize}
+		\subsubsection {Patch Management}
+			\begin{itemize}
+				\item All types of OS, application, and firmware code potentially
+					contains vulnerabilities
+				\item Patch management essential for mitigating these vulnerabilities
+				\item Update policies and schedule
+					\begin{itemize}
+						\item Apply all latest -- autoschedule
+						\item Only apply specific patches
+						\item Third-party patches
+					\end{itemize}
+				\item Scheduling updates
+				\item Managing unpatchable systems
+			\end{itemize}
+		\subsubsection {Endpoint Management}
+			\begin{itemize}
+				\item AV/Antimalware
+				\item Host-based Intrusion Detection/Prevention System (HIDS/HIPS)
+				\item Endpoint Protection Platform (EPP)
+				\item Data Loss Protection (DLP) -- block copy or transfer of 
+					confidential data
+				\item Endpoint protection deployment
+			\end{itemize}
+		\subsubsection {Next-Generation Endpoint Protection}
+			\begin{itemize}
+				\item Endpoint detection and Response (EDR)
+				\item Next-generation firewall integration
+			\end{itemize}
+		\subsubsection {Antivirus Response}
+			\begin{itemize}
+				\item Signature-based detection and heuristics
+				\item Common malware enumeration and classification
+				\item Manual remediation advice
+				\item Advanced malware tools
+				\item Sandboxing
+			\end{itemize}
+	\subsection {Embedded Systems}
+		\subsubsection {Embedded Systems}
+			\begin{itemize}
+				\item Computer systems with dedicated function
+				\item Static Environment
+				\item Cost, power, and compute constraints
+				\item Crypto, authentication and implied trust constraints
+				\item Network and range constraints
+			\end{itemize}
+		\subsubsection {Logic Controllers for Embedded Systems}
+			\begin{itemize}
+				\item Programmable Logic Controllers(PLC)
+				\item System on a Chip (SoC)
+					\begin{itemize}
+						\item Processors, controllers, and devices all provided
+							on a single package
+						\item Raspberry Pi, Arduino
+					\end{itemize}
+				\item Field Programmable Gate Array (FPGA)
+				\item Real-time Operating System (RTOS)
+					\begin{itemize}
+						\item Designed to be ultra-stable
+						\item Real time scheduling
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Embedded Systems Communications Considerations}
+			\begin{itemize}
+				\item Operational Technology (OT) networks
+				\item Cellular networks/baseband radio
+					\begin{itemize}
+						\item Narrowband IOT (NB-IOT)
+						\item LTE Machine Type Communication
+						\item Subscriber Identity Module (SIM) Cards
+						\item Encryption and backhaul
+					\end{itemize}
+				\item Z-wave and Zigbee
+			\end{itemize}
+		\subsubsection {Industrial Control Systems}
+			\begin{itemize}
+				\item Availability, integrity, confidentiality (AIC triad)
+					-- Availability comes first in industrial control systems
+				\item Workflow and process automation
+					\begin{itemize}
+						\item Industrial control systems (ICS)
+						\item Plant devices and embedded PLCs
+						\item OT network
+						\item Electromechanical components and sensors
+						\item Human machine interface (HMI)
+						\item Data historian
+					\end{itemize}
+				\item Supervisory Control and Data Acquisition (SCADA)
+					\begin{itemize}
+						\item Runs on PCs to gather data and perform monitoring
+						\item Manage large-scale, multiple site communications
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Internet of Things}
+			\begin{itemize}
+				\item Machine to Machine communication
+				\item Hub/control system
+				\item Smart devices
+				\item Wearables
+				\item Sensors
+				\item Vendor security management
+			\end{itemize}
+		\subsubsection {Specialized Systems for Facility Automation}
+			\begin{itemize}
+				\item Building automation system (BAS)
+					\begin{itemize}
+						\item Smart Buildings
+						\item Process and memory vulnerabilities
+						\item Credentials embedded in application code
+						\item Code injection 
+					\end{itemize}
+				\item Smart meters
+				\item Surveillance systems
+					\begin{itemize}
+						\item Physical access control system
+						\item Risks from third-party provision
+						\item Abuse of cameras
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Specialized Systems in IT}
+			\begin{itemize}
+				\item Multifunction Printer (MFP)
+				\item Voice Over IP (VOIP)
+				\item Shodan
+			\end{itemize}
+		\subsubsection {Specialized systems for Vehicles and Drones}
+			\begin{itemize}
+				\item UAV/Drones
+				\item Computer controlled or assisted engine, steering, brakes
+				\item In-vehicle entertainment and navigation
+				\item Controller area network (CAN) serial communications buses
+					\begin{itemize}
+						\item Onboard Diagnostics (OBD-II) Module
+						\item Access via cellular or Wifi
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Specialized Systems for Medical Devices}
+			\begin{itemize}
+				\item Used in hospitals and clinics but also at home by patients
+				\item Potentially unsecure protocols and control systems
+				\item Use compromised devices to point to networks -- stealing PHI
+				\item Ransom by threatening to disrupt services
+				\item Kill or injure patients
+			\end{itemize}
+		\subsubsection {Security for Embedded Systems}
+			\begin{itemize}
+				\item Network Segmentation
+					\begin{itemize}
+						\item Strictly restrict access to OT networks
+						\item Incresed monitoring for SCADA hosts
+					\end{itemize}
+				\item Wrappers -- use IPSec for authentication and integrity and
+					confidentiality
+				\item Firmware code control -- supply chain risks
+				\item Inability to patch
+			\end{itemize}
+
+\section {Implementing Secure Mobile Solutions}
+	\subsection {Implement Mobile Device Management}
+		\subsubsection {Mobile Device Deployment Models}
+			\begin{itemize}
+				\item Bring your own device (BYOD)
+				\item Corporate owned, business owned (COBO)
+				\item Corporate owned, personally-enabled (COPE)
+				\item Choose your own device (CYOD)
+				\item Virtual desktop infrastructure (VDI)
+			\end{itemize}
+		\subsubsection {Enterprise Mobility Management}
+			\begin{itemize}
+				\item Apply security policies to the use of mobile devicess in the
+					enterprise
+				\item Visibility over use and configuration
+				\item Enterprise mobility management (EMM)
+				\item Mobile device management (MDM) -- network enrollment,
+					device functions
+				\item Mobile application management (MAM) 
+			\end{itemize}
+		\subsubsection {iOS in the Enterprise}
+			\begin{itemize}
+				\item App development
+					\begin{itemize}
+						\item Software Development Kit (macOS only)
+						\item App Store
+						\item Device Enrollment Program
+					\end{itemize}
+				\item iOS Vulnerabilities and Patch Management
+			\end{itemize}
+		\subsubsection {Android in the Enterprise}
+			\begin{itemize}
+				\item App Store and developer programs
+				\item Android vulnerabilies and patch management
+				\item Security Enhanced Android (SEAndroid)
+			\end{itemize}
+		\subsubsection {Mobile Access Control Systems}
+			\begin{itemize}
+				\item Smartphone authentication
+				\item Screen lock
+				\item Context-aware authentication
+			\end{itemize}
+		\subsubsection {Remote Wipe}
+			\begin{itemize}
+				\item Kill switch
+				\item Sets device to factory defaults or clear storage
+				\item Initiated from enterprise management software
+				\item Thief might be able to keep the device from receiving
+					the wipe command
+			\end{itemize}
+		\subsubsection {Full Device Encryption and External Media}
+			\begin{itemize}
+				\item iOS device encryption
+				\item Android device encryption
+				\item External media
+				\item MicroSD HSM
+			\end{itemize}
+		\subsubsection {Location Services}
+			\begin{itemize}
+				\item Geolocation
+				\item Location Services
+					\begin{itemize}
+						\item Global Positioning System(GPS)
+						\item Indoor Positioning Systems(IPS)
+					\end{itemize}
+				\item Geofencing to apply location-based policies automatically
+				\item GPS-tagging
+			\end{itemize}
+		\subsubsection {Application Management}
+			\begin{itemize}
+				\item MDM/EMM application use policies
+				\item Corporate workspaces
+				\item Restricting third-party app stores
+				\item Enterprise app development and fulfillment -- sideloading
+			\end{itemize}
+		\subsubsection {Content Management}
+			\begin{itemize}
+				\item Privately owned but corporate use issues
+				\item Containerization sets up a corporate workplace segmented
+				\item Storage segmentation ensures separation of data
+				\item Enforcing content management/DLP policies
+			\end{itemize}
+		\subsubsection {Rooting and Jailbreaking}
+			\begin{itemize}
+				\item Rooting -- custom firmware/ROM
+				\item Jailbreaking -- Principally iOS, tethered jailbreak
+				\item Carrier unlocking
+				\item Risks to enterprise management
+			\end{itemize}
+	\subsection {Implement Secure Mobile Device Connections}
+		\subsubsection {Cellular and GPS Connection Methods}
+			\begin{itemize}
+				\item Disable cellular data if unmonitored or unfiltered
+				\item Prevent use for data exfiltration
+				\item Attacks on cellular connections
+				\item Global Positioning Systems (GPS) - GPS/GPS-A
+			\end{itemize}
+		\subsubsection {Wi-Fi and Tethering Connection Methods}
+			\begin{itemize}
+				\item Risks from WiFi
+					\begin{itemize}
+						\item Legacy security methods
+						\item Open access points
+						\item Rogue access points
+					\end{itemize}
+				\item Personal Area Network(PAN) technologies
+				\item Wi-Fi Direct
+				\item Tethering and hotspots
+			\end{itemize}
+		\subsubsection {Bluetooth Connection Methods}
+			\begin{itemize}
+				\item Device discovery
+				\item Authentication and authorization -- pairing mechanism
+				\item Malware and exploits
+					\begin{itemize}
+						\item Bluebourne
+						\item Bluejacking -- sending unsolicited text messages
+						\item Bluesnarfing -- exploit to steal info from phones
+						\item Rogue firmware peripheral devices
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Infrared and RFID Connection Methods}
+			\begin{itemize}
+				\item Infrared -- IR blaster/sensor
+				\item Radio Frequency ID (RFID)
+					\begin{itemize}
+						\item Usually unpowered tags
+						\item Transmit when in range of reader
+						\item Skimming attack
+						\item Encrypt sensitive information
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Near Field Communications and Mobile Payment Services}
+			\begin{itemize}
+				\item NFC
+				\item Connection configuration/bump
+				\item Mobile wallet apps
+				\item Eavesdropping/skimming
+				\item Denial of service
+			\end{itemize}
+		\subsubsection {USB Connection Methods}
+			\begin{itemize}
+				\item USB OTG allows a port to function as a device or hub
+				\item USB with malicious firmware might be able to perform an exploit
+				\item Juice Jacking
+			\end{itemize}
+		\subsubsection {SMS/MMS/RCS and Push Notifications}
+			\begin{itemize}
+				\item Short message service (SMS) -- exploits against SMS
+				\item Multimedia message service (MMS)
+				\item Rich communication services (RCS) -- WhatsApp, Signal
+				\item Push Notifications -- apps diplay alerts on mobile phones
+			\end{itemize}
+		\subsubsection {Firmware Over-the-Air Updates}
+			\begin{itemize}
+				\item Baseband updates and radio firmware
+				\item Over the Air (OTA) update delivery
+				\item Risks from rooted/jailbroken devices
+				\item Risks from highly targeted attacks
+			\end{itemize}
+		\subsubsection {Microwave Radio Connection Methods}
+			\begin{itemize}
+				\item Backhaul link from cell tower to provider network
+				\item Private links between premises
+				\item Point-to-point microwave
+				\item Point-to-multipoint microwave
+				\item Other types of multipoint
+			\end{itemize}
