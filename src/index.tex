@@ -1935,3 +1935,371 @@
 				\item Point-to-multipoint microwave
 				\item Other types of multipoint
 			\end{itemize}
+
+\section {Implement Secure Application Attacks}
+	\subsection {Analyze Indicators of Application Attacks}
+		\subsubsection {Application Attacks}
+			\begin{itemize}
+				\item Attacks that target vulnerabilities in application code or
+					architecture/design
+				\item Privilege escalation
+					\begin{itemize}
+						\item Get privileges from target vulnerable process to
+							run arbitrary code
+						\item Remote execution
+						\item Vertical and horizontal privilege escalation
+					\end{itemize}
+				\item Error handling
+				\item Improper input handling
+			\end{itemize}
+		\subsubsection {Overflow Vulnerabilities}
+			\begin{itemize}
+				\item Buffer overflow
+					\begin{itemize}
+						\item Buffer is memory allocated to application
+						\item Overflows can allow arbitrary code to execute
+					\end{itemize}
+				\item Integer Overflow
+					\begin{itemize}
+						\item Cause application to calculate values that are
+							out-of-bounds
+						\item Could use to cause crash or use in buffer overflow attack
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Null Pointer Dereferencing and Race Conditions}
+			\begin{itemize}
+				\item Pointers are used in C/C++ to refer to memory locations
+				\item Dereferencing occurs when the program tries to read or write the
+					location to the pointer
+				\item If the location is null or invalid, the process will crash
+				\item Race condition
+					\begin{itemize}
+						\item Execution depends on timing and sequence of events
+					\end{itemize}
+				\item Time of check/time of use(TOCTOU)
+					\begin{itemize}
+						\item Environment is manipulated to change a resource after
+							checking but before use
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Memory Leaks and Resource Exhaustion}
+			\begin{itemize}
+				\item Memory Leaks
+					\begin{itemize}
+						\item Process allocates memory locations, but never releases them
+						\item Can cause host to run out of memory
+						\item Could be faulty code or could be malicious
+					\end{itemize}
+				\item Resource Exhaustion
+					\begin{itemize}
+						\item CPU Time, system memory allocation, fixed disk capacity,
+							and network utilization
+						\item Spawning activity to use up these resources
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {DLL Injections and Driver Manipulation}
+			\begin{itemize}
+				\item Dynamic Link Library(DLL) implements some function that multiple
+					functions can use
+				\item DLL injection forces a process to load a malicious DL
+				\item Refactoring might allow code obfuscation to elude antivirus
+				\item Shim -- exploit application compatibility framework to allow malware
+					to persist on host
+			\end{itemize}
+		\subsubsection {Pass the Hash Attack}
+			\begin{itemize}
+				\item Exploiting cached credentials
+				\item Windows host cache credentials in memory as NTLM hashes
+				\item Local malicious process with administrator privileges can dump
+					themselves in
+				\item Detection through security log events
+			\end{itemize}
+		\subsubsection {Uniform Resource Locator Analysis}
+			\begin{itemize}
+				\item URL format
+				\item HTTP Methods
+					\begin{itemize}
+						\item TCP Connections
+						\item GET, POST, PUT, HEAD
+						\item POST or PUT
+						\item URL query parameters
+						\item Fragment/anchor ID
+						\item HTTP response codes
+					\end{itemize}
+				\item Percent encoding
+			\end{itemize}
+		\subsubsection {Application Programming Interface Attacks}
+			\begin{itemize}
+				\item API calls and parameters
+				\item Must only be with HTTPS encryption
+				\item Common weakness and vulnerabilities
+					\begin{itemize}
+						\item Inefficient secrets management
+						\item Lack of input validation
+						\item Error messages leaking information
+						\item Denial of Service
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Replay Attacks}
+			\begin{itemize}
+				\item Resubmitting or guessing authorization tokens
+				\item Session management cookies
+				\item Replay cookie to obtain authentication session
+				\item Secure cookies
+			\end{itemize}
+		\subsubsection {Session hijacking and CSRF}
+			\begin{itemize}
+				\item Cookie hijacking and session prediction
+				\item Client-side/cross-site (CSRF/XSRF) request forgery
+					\begin{itemize}
+						\item Passes URL to another site where the user has an
+							authenticated session
+						\item Confused deputy
+					\end{itemize}
+				\item Clickjacking -- add invisible layer to intercept/redirect
+					click events
+				\item SSL Strip
+					\begin{itemize}
+						\item Exploit redirect from HTTP to HTTPS
+						\item Sites should no longer be using HTTP
+						\item HSTS -- HTTP Script Transport Security
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Cross-Site Scripting (XSS)}
+			\begin{itemize}
+				\item Attacker injects code in trusted site that will be executed
+					in client browser
+				\item Non-persistent/reflected
+				\item Persistent/stored XSS
+				\item Client-side scripts
+			\end{itemize}
+		\subsubsection {Structured Query Language Injection Attacks}
+			\begin{itemize}
+				\item Client-side vs server-side attacks
+				\item Injection-type attacks
+				\item SQL statements
+				\item SQL injection
+			\end{itemize}
+		\subsubsection {XML and LDAP Injection Attacks}
+			\begin{itemize}
+				\item XML injection
+					\begin{itemize}
+						\item XML Tagged documents
+						\item XML External Entity (XXE)
+					\end{itemize}
+				\item LDAP Injection
+			\end{itemize}
+		\subsubsection {Directory Traversal and Command Injection Attacks}
+			\begin{itemize}
+				\item Directory traversal -- obtain access to files outside of root dir
+				\item Command injection -- cause server to run OS commands
+			\end{itemize}
+		\subsubsection {Server side request forgery}
+			\begin{itemize}
+				\item Cause a server to make API calls to HTTP requests with arbitrary
+					parameters
+				\item Variety of exploit techniques and aims
+			\end{itemize}
+	\subsection {Secure Coding Practices}
+		\subsubsection {Secure Coding Techniques}
+			\begin{itemize}
+				\item Security development lifecycles and best practice guides
+				\item Input Validation
+					\begin{itemize}
+						\item User-generated data form controls
+						\item Passed by another program
+						\item Document and test all types of user/API input
+					\end{itemize}
+				\item Normalization and output coding
+			\end{itemize}
+		\subsubsection {Server-side vs Client-side Validation}
+			\begin{itemize}
+				\item Client-side execution
+					\begin{itemize}
+						\item Code is run by the browser
+						\item Document Object Model (DOM) scripting
+						\item Might send a request to the server, but the request
+							is constructed by the client
+					\end{itemize}
+				\item Server-side execution
+					\begin{itemize}
+						\item Code is run by the server
+					\end{itemize}
+				\item Client side input validation
+			\end{itemize}
+		\subsubsection {Web Application Security}
+			\begin{itemize}
+				\item Secure cookies
+					\begin{itemize}
+						\item Avoid using persistent cookies for session authentication
+						\item Set the Secure attribute
+						\item Set the HTTPOnly attribute
+						\item Use the SameSite attribute
+					\end{itemize}
+				\item Response Headers
+					\begin{itemize}
+						\item HTTP Strict Transport Security
+						\item Content Security Policy (CSP)
+						\item Cache-control
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Data Exposure and Memory Management}
+			\begin{itemize}
+				\item Data Exposure
+					\begin{itemize}
+						\item Allowing privileged data to be read without authorization
+						\item Lack of encryption
+					\end{itemize}
+				\item Error Handling
+					\begin{itemize}
+						\item Struction Exception Handler (SEH)
+						\item Prevent use of error conditions for arbitrary code/injection
+					\end{itemize}
+				\item Memory Management
+					\begin{itemize}
+						\item Use of unsecure functions
+						\item Input validation and overflow protection
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Secure Code Usage}
+			\begin{itemize}
+				\item Code reuse -- using a block of code in a different context
+				\item Third party libraries/DLLs
+				\item Software Development Kit (SDKs)
+				\item Stored procedures
+			\end{itemize}
+		\subsubsection {Other Secure Coding Practices}
+			\begin{itemize}
+				\item Unreachable and Dead code -- code that does not affect program flow
+				\item Obfuscation/camouflage -- disguise nature of code, inhibit
+					reverse engineering
+			\end{itemize}
+		\subsubsection {Static Code Analysis}
+			\begin{itemize}
+				\item Static/source code analysis
+					\begin{itemize}
+						\item Submit code for analysis by automated software
+					\end{itemize}
+				\item Manual Code review
+					\begin{itemize}
+						\item Human analysis of source code
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Dynamic Code Analysis}
+			\begin{itemize}
+				\item Run application in a staging environment for testing
+				\item Fuzzing and stress testing
+					\begin{itemize}
+						\item Application UI
+						\item Protocol
+						\item File format
+					\end{itemize}
+			\end{itemize}
+	\subsection {Implement Secure Script Environments}
+		\subsubsection {Scripting}
+			\begin{itemize}
+				\item Automation of activity through programs and scripts
+				\item Basic elements of a script
+					\begin{itemize}
+						\item Parameters
+						\item Branching and looping statements
+						\item Validation and error handlers
+						\item Unit Tests
+					\end{itemize}
+				\item Scripting Language
+				\item Domain-specific
+				\item Orchestration Tools
+				\item Syntax
+			\end{itemize}
+		\subsubsection {Python Script Environment}
+		\subsubsection {Execution Control}
+			\begin{itemize}
+				\item Prevent use of unauthorized code
+				\item Allow lists and block lists
+				\item Code signing
+				\item OS-signing Execution Control
+					\begin{itemize}
+						\item Software Restriction Policies (SRP)
+						\item AppLocker
+						\item Windows Defender Application Control (WDAC)
+						\item SELinux
+						\item AppArmor
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Malicious Code Indicator}
+			\begin{itemize}
+				\item Detection through monitoring platforms or host/process behavior
+					analysis
+				\item Shellcode -- create process/inject DLL
+				\item Credential Dumping
+				\item Lateral Movement/insider attack
+				\item Persistence
+			\end{itemize}
+		\subsubsection {Man-in-the-Browser Attack}
+			\begin{itemize}
+				\item Compromise browser
+				\item Malicious plug-in/DLL
+				\item Browser Exploitation Framework (BEEF)
+				\item Exploit kits
+			\end{itemize}
+	\subsection {Summarize Deployment and Automation Concepts}
+		\subsubsection {Application Development, Deployment and Automation}
+			\begin{itemize}
+				\item DevSecOps
+				\item Completion of tasks without human intervention
+				\item Automation facilitates better scalability and elasticity
+			\end{itemize}
+		\subsubsection {Secure Application Development Environments}
+			\begin{itemize}
+				\item Software development life cycle (SDLC) -- waterfall and Agile
+				\item Quality Assurance (QA)
+				\item Development Environments
+				\item Preserving environment integrity
+					\begin{itemize}
+						\item Sandboxing
+						\item Secure baseline
+						\item Integrity management
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Provisioning, Deprovisioning and Version Control}
+			\begin{itemize}
+				\item Provisioning -- process of deploying an application to the target
+					environment (installing/setup, instance)
+				\item Deprovisioning -- process of removing an application from packages
+					or instances
+				\item Version Control
+					\begin{itemize}
+						\item Customer Version ID
+						\item Developer Build ID
+						\item Source code version control
+						\item Code commits and backups
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Automation/Scripting Release Paradigms}
+			\begin{itemize}
+				\item Waterfall and Agile SDLC
+				\item Continuous integration
+					\begin{itemize}
+						\item Commit updates often
+						\item Reduce commit conflicts
+					\end{itemize}
+				\item Continiuoos Delivery
+					\begin{itemize}
+						\item Push updates to staging infrastructure
+					\end{itemize}
+				\item Continuous Deployment
+					\begin{itemize}
+						\item Push updated code to production
+					\end{itemize}
+				\item Continuous monitoring and automated courses of action
+				\item Continuous validation
+			\end{itemize}
+		\subsubsection {Software Diversity}
+			\begin{itemize}
+				\item Runtime environment -- Compiled/interpreted
+				\item Software diversity as obfuscation
+				\item Security by diversity -- avoid monocultures to make
+					attacks harder to develop
+			\end{itemize}
+
+\section {Implementing Secure Cloud Solutions}
