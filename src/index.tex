@@ -2303,3 +2303,408 @@
 			\end{itemize}
 
 \section {Implementing Secure Cloud Solutions}
+	\subsection {Summarize Secure Cloud and Virtualization Services}
+		\begin{itemize}
+			\item Public (Multi-tenant)
+				\begin{itemize}
+					\item Cloud Service Providers (CSPs)
+					\item Shared between subscribers
+					\item Multi-cloud
+				\end{itemize}
+			\item Hosted Private
+				\begin{itemize}
+					\item Private instance operated by CSP but dedicated to a single
+						customer
+				\end{itemize}
+			\item Private
+				\begin{itemize}
+					\item Wholly owned and operated by organization
+					\item On-premises or off-premises
+				\end{itemize}
+			\item Commmunity
+			\item Hybrid
+		\end{itemize}
+	\subsection {Cloud Service Models}
+		\begin{itemize}
+			\item Anything as a Service (XaaS)
+			\item Infrastracture as a Service (IaaS)
+			\item Software as a Service (SaaS)
+			\item Platform as a Service (PaaS)
+		\end{itemize}
+		\subsubsection {Anything as a Service}
+			\begin{itemize}
+				\item Specific IaaS, PaaS, or SaaS solutions for business needs
+				\item Security In the Cloud
+				\item Cloud Responsibility matrix
+			\end{itemize}
+		\subsubsection {Security as a Service}
+			\begin{itemize}
+				\item Consultants -- Third-party expertise and perspective
+				\item Managed Security Services Provider (MSSP)
+					-- Turnkey security solutions
+				\item SECaaS -- Cloud-deployed security assessment and analysis
+			\end{itemize}
+		\subsubsection {Virtualization Technologies and Hypervisor Types}
+			\begin{itemize}
+				\item Virtualization Platform
+				\item Type II Hypservisor (Host-based)
+				\item Type I Hypervisor (bare metal)
+			\end{itemize}
+		\subsubsection {Virtual Desktop Infrastructure and Thin Clients}
+			\begin{itemize}
+				\item Virtual Desktop Interface (VDI)
+				\item Storing images of clients (OS + applications) on a central server
+				\item Virtual Desktop Environment (VDE) images are loaded by thin clients
+				\item Allows for low-power client devices
+				\item Centralizes control over client desktops
+				\item Allows for almost completely hosted IT infrastructure
+			\end{itemize}
+		\subsubsection {Application Virtualization and Container Virtualization}
+			\begin{itemize}
+				\item Application virtualization
+					\begin{itemize}
+						\item Hosting or streaming individual software applications
+							on a server
+						\item XenApp, App-V, ThinApp
+					\end{itemize}
+				\item Container virtualization (application cells)
+					\begin{itemize}
+						\item Resource separation at the OS level
+						\item Cannot run different OS WMs
+						\item Docker
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {VM Escape Protection}
+			\begin{itemize}
+				\item Reduce impact of successful exploits
+				\item Ensure careful placement of VM services on host/within network
+				\item Respect security zones (DMZ)
+			\end{itemize}
+		\subsubsection {VM Sprawl Avoidance}
+			\begin{itemize}
+				\item Guest OS Security -- OS environment must still be maintained
+				\item Rogue VMs -- sprawl and undocumented assets
+			\end{itemize}
+	\subsection {Apply Cloud Security Solutions}
+		\subsubsection {Cloud Security Integration and Auditing}
+			\begin{itemize}
+				\item Obtaining and integrating cloud security data
+				\item Responsibility matrix and SLAs
+				\item Reporting
+				\item Legal and compliance responsibilities
+				\item Insider threat
+			\end{itemize}
+		\subsubsection {Cloud Security Controls}
+			\begin{itemize}
+				\item Same types of security controls
+				\item Cloud native controls vs third-party solutions
+				\item Application security and VM
+				\item Secrets management
+					\begin{itemize}
+						\item Block use of root account
+						\item Use MFA for privileged accounts
+						\item Protect API keys
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Cloud Compute Security}
+			\begin{itemize}
+				\item Compute
+					\begin{itemize}
+						\item Processing resources for cloud workloads (CPU and RAM)
+						\item Virtual Machines and Containers
+						\item Dynamic resource allocation
+					\end{itemize}
+				\item Container Security
+				\item API Inspection and Integration
+					\begin{itemize}
+						\item Number of requests
+						\item Latency
+						\item Error rates
+						\item Unauthorized and suspicious endpoints
+					\end{itemize}
+				\item Instance Awareness -- logging and monitoring to mitigate cloud sprawl
+			\end{itemize}
+		\subsubsection {Cloud Storage Security}
+			\begin{itemize}
+				\item Storage
+					\begin{itemize}
+						\item Persistent Storage Capacity
+						\item Performance characteristics for storage users
+						\item I/O operations per second (IOPS)
+					\end{itemize}
+				\item Permissions and resource policies -- JSON
+				\item Encryption
+					\begin{itemize}
+						\item Symmetric media encryption key
+						\item CSP-managed keys vs customer-managed
+						\item Separation of duties for CSP-managed keys
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {High Availability}
+			\begin{itemize}
+				\item High availability
+					\begin{itemize}
+						\item Virtualization layer provisions dynamic allocation and
+							memory
+						\item 99.99% uptime
+					\end{itemize}
+				\item Replication
+					\begin{itemize}
+						\item Copying data between media, servers and sites
+						\item Performance tiers
+					\end{itemize}
+				\item High availability across zones
+					\begin{itemize}
+						\item Local
+						\item Regional
+						\item Geo-redundant storage
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Cloud Networking Security}
+			\begin{itemize}
+				\item Cloud networking types
+				\item Virtual private clouds (VPCs)
+				\item Private and Public Subnets
+			\end{itemize}
+		\subsubsection {VPCs and Transit Gateways}
+		\subsubsection {VPC Endpoints}
+			\begin{itemize}
+				\item Publishing a service over cloud internal network
+				\item Avoids exposing traffic to the internet
+				\item Gateway endpoint
+					\begin{itemize}
+						\item Connect instances to S3 and DynamoDB services
+						\item Added as a route
+					\end{itemize}
+				\item Interface endpoint
+			\end{itemize}
+		\subsubsection {Cloud Firewall Security}
+			\begin{itemize}
+				\item Need for Segmentation
+					\begin{itemize}
+						\item Load balancing workloads
+						\item Isolating data processing
+						\item Compartmentalizing data access
+					\end{itemize}
+				\item OSI Layers -- Layers 3,4,7
+				\item Cloud native vs Vendor Controls
+			\end{itemize}
+		\subsubsection {Security Groups}
+			\begin{itemize}
+				\item Basic stateful packet filtering for instances
+				\item Default security group
+				\item Custom groups
+			\end{itemize}
+		\subsubsection {Cloud Access Security Brokers}
+			\begin{itemize}
+				\item Mediate access to cloud services by enterprise users across all types
+					of devices
+				\item Implemented as proxy or via API
+				\item Next-Generation Secure Web Gateway
+			\end{itemize}
+	\subsection {Summarize Infrastructure as Code Concepts}
+		\subsubsection {Services Integration and Microservices}
+			\begin{itemize}
+				\item Monolithic client/server applications
+				\item Service-oriented architecture (SOA)
+				\item Microservices
+				\item Services integration and orchestration
+			\end{itemize}
+		\subsubsection {Application Programming Interface (API)}
+			\begin{itemize}
+				\item Means by which external entities interact with a service
+				\item Simple Object Access Protocol (SOAP)
+					\begin{itemize}
+						\item XML Format Messaging
+						\item Web Services (WS) Standards
+					\end{itemize}
+				\item Representational State Transfer (REST)
+					\begin{itemize}
+						\item RESTful APIs
+						\item HTTP Operation/Verb
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Serverless Architecture}
+			\begin{itemize}
+				\item Wholly abstracted from the hardware, OS and platform layers
+					\begin{itemize}
+						\item AWS Lambda
+						\item Google Cloud Functions
+						\item Microsoft Azure Functions
+					\end{itemize}
+				\item All hardware, OS, and platform management
+			\end{itemize}
+		\subsubsection {Infrastructure as Code}
+			\begin{itemize}
+				\item All configuration and provisioning is performed by scripting
+					/automation/orchestration
+				\item Elimination of inconsistency (snowflakes and config drift)
+			\end{itemize}
+		\subsubsection {Software-Defined Networking}
+			\begin{itemize}
+				\item Physical and virtual appliances that can be fully automated
+				\item SDN policy > northbound API > network controller > southbound API
+					> firewall appliance
+				\item Network functions virtualization (NFV)
+			\end{itemize}
+		\subsubsection {Fog and Edge Computing}
+			\begin{itemize}
+				\item Embedded and IoT devices deployed at the network edge
+				\item Strong requirements for availability and low latency
+				\item Fog computing
+					\begin{itemize}
+						\item Provision greater processing resource
+						\item Prioritize data for analysis and alert conditions
+					\end{itemize}
+				\item Edge computing
+					\begin{itemize}
+						\item Defines additional zones and processing nodes
+						\item Edge define zone
+						\item Edge gateways
+						\item Fog nodes
+						\item Data center
+					\end{itemize}
+			\end{itemize}
+
+\section {Explaining Data Privacy and Protection Concepts}
+	\subsection {Explaining Privacy and Data Sensitivity Concepts}
+		\subsubsection {Privacy and Sensitive Data Concepts}
+			\begin{itemize}
+				\item Security -- CIA attributes
+				\item Privacy
+					\begin{itemize}
+						\item Personal data and data subjects
+						\item Compliance with regulations
+						\item Rights of data subjects
+					\end{itemize}
+				\item Information life cycle management
+					\begin{itemize}
+						\item Creation/collection (classification)
+						\item Distribution/use
+						\item Retention
+						\item Disposal
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Data Roles and Responsibilities}
+			\begin{itemize}
+				\item Oversight and management of a range of information assets
+					within the organization
+				\item Data owner -- ultimate responsibility
+				\item Data steward -- quality and oversight
+				\item Data custodian -- informations systems management
+				\item Data Privacy Officer (DPO) -- oversight of PII
+				\item Organizational roles in privacy legislation
+					\begin{itemize}
+						\item Data controller
+						\item Data processor
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Data Classifications}
+			\begin{itemize}
+				\item Public (Unclassified) -- no confidentiality, but integrity and
+					availability is important
+				\item Confidential (Secret) -- subject to admin and/or technical access
+					and controls
+				\item Critical (Top-Secret)
+				\item Proprietary -- Owned information of commercial value
+				\item Private/personal data -- data that can identify an individual
+				\item Sensitive -- Special categories of personal data, such as beliefs,
+					ethnic origin, or sexual orientation
+			\end{itemize}
+		\subsubsection {Data Types}
+			\begin{itemize}
+				\item Personally Identifiable Information (PII)
+				\item Customer Data -- institutional information, personal information
+					about the customer's employees
+				\item Health information -- medical and insurance records and test
+					results
+				\item Financial information -- data held about bank and investment
+					accounts, plus information such as payroll and tax returns
+				\item Government data -- legislative requirements
+			\end{itemize}
+		\subsubsection {Privacy Notices and Data Retention}
+			\begin{itemize}
+				\item Legislation and Regulations -- GDPR, Rights of Data Subjects
+				\item Privacy Notices -- purpose of collecting personal information
+				\item Impact assessments -- assess and mitigate risks from collecting
+					personal data
+			\end{itemize}
+		\subsubsection {Data Sovereignty and Geographical Considerations}
+			\begin{itemize}
+				\item Data sovereignty -- Jurisdiction that enforces personal data
+					processing and storage regulations
+				\item Geographical considerations -- Define access controls on the basis
+					of the client location
+			\end{itemize}
+		\subsubsection {Privacy Breaches and Data Breaches}
+			\begin{itemize}
+				\item Definition of breach event -- data vs privacy
+				\item Organizational consequences
+					\begin{itemize}
+						\item reputation damaga
+						\item identity theft
+						\item fines
+						\item IP theft
+					\end{itemize}
+				\item Notifications of Breaches
+				\item Escalation
+				\item Public Notification and Disclosure
+			\end{itemize}
+	\subsection {Explain Data Privacy and Data Protection Controls}
+		\subsubsection {Data Protection}
+			\begin{itemize}
+				\item Data at rest -- stored in persistent storage media
+				\item Data in transit -- transmitted over a network
+				\item Data in use -- present in volatile memory
+			\end{itemize}
+		\subsubsection {Data Exfiltration}
+			\begin{itemize}
+				\item Data exfiltration methods
+					\begin{itemize}
+						\item Removable media
+						\item Transferring over the network
+						\item Communicating data over by phone or video
+						\item Taking a picture or video of text data
+					\end{itemize}
+				\item Ordinary countermeasures
+					\begin{itemize}
+						\item Ensure all data is encrypted at rest
+						\item Create and maintain offsite backups of data
+						\item Implement access controls
+						\item Restrict the types of network channels that attackers use
+						\item Train users about document confidentiality
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Data Loss Prevention}
+			\begin{itemize}
+				\item Scan files for matched strings and prevent unauthorized transfer
+				\item Cloud based DLP
+				\item Remediation
+					\begin{itemize}
+						\item Alert only
+						\item Block
+						\item Quarantine
+						\item Tombstone
+					\end{itemize}
+			\end{itemize}
+		\subsubsection {Rights Management Services}
+			\begin{itemize}
+				\item Assign file permissions for different document roles
+				\item Restrict printing and forwarding of documents
+				\item Restrict printing and forwarding of email messages
+			\end{itemize}
+		\subsubsection {Privacy Enhancing Technologies}
+			\begin{itemize}
+				\item Data minimization -- only collect sufficient data
+				\item Deidentification -- removing personal information from data sites
+				\item Anonymization -- irreversible deidentification
+				\item Pseudo-Anonymization -- reidentification using separate data source
+				\item Reidentification Attacks -- K-anonymous information
+			\end{itemize}
+		\subsubsection {Database Deidentification Methods}
+			\begin{itemize}
+				\item Data masking -- format-preserving masks, irreversible
+				\item Tokenization -- random token, reversible with access
+				\item Aggregation/banding
+				\item Hashing and Salting -- indexing method, discarding original data
+			\end{itemize}
