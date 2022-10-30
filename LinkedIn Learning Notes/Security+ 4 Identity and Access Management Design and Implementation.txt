@@ -1,0 +1,372 @@
+Course Title: CompTIA Security+ (SY0-601) Cert Prep: 4 Identity and Access Management Design and Implementation
+
+Description: At a basic level, organizations must be able to grant access to legitimate users—and block requests from those who lack the right permissions—in order to operate safely and securely. As a security professional, you're charged with creating and implementing the identity and access management systems that make this happen. In this course, the fourth installment in the CompTIA Security+ (SY0-601) Cert Prep series, explore the world of identification, authentication, and authorization as you prepare for the Security+ exam. Instructor Mike Chapple covers key authentication concepts, including multifactor authentication, single sign-on, and federation. He also goes over mandatory access controls, discretionary access controls, the basic principles of account and privilege management, and more.We are a CompTIA Partner. As such, we are able to offer CompTIA exam vouchers at a 10% discount. For more information on how to obtain this discount, please download these PDF instructions.
+
+
+***********************************************
+Chapter: Introduction
+***********************************************
+
+
+-----------------------------------------------
+Video: Identity and access management
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:11            Identification, authentication,  authorization 
+
+
+***********************************************
+Chapter: 1. Identification
+***********************************************
+
+
+-----------------------------------------------
+Video: Identification, authentication, authorization, and accounting
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:37            Authorized users gain access through identification, authentication and authorization 
+
+0:00:58            Identification - someone makes a claim of their identity 
+
+0:01:18            Authentication - proves identity to the satisfaction to the access control system 
+
+0:01:41            Authorization - checking if someone is allowed to have access 
+
+0:02:54            Digital version:
+Identification - logging in with username
+Authentication - using a password
+Authorization - itemizes the specific permissions of users or group of users (access control lists) 
+
+0:03:04            AAA - Authentication, Authorization, Accounting 
+
+0:03:04            Accounting - tracks user activity 
+
+
+-----------------------------------------------
+Video: Usernames and access cards
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:17            Identification - uniquely identify each user in a system 
+
+0:00:59            Usernames - most common way to identify the individual (first, last usually) should not be considered secret 
+
+0:01:16            Access card - serves as proof of employment 
+
+0:02:02            Magnetic stripe cards - easy to duplicate 
+
+0:02:16            Smart cards - prove authenticity with a chip 
+
+0:03:10            proximity cards - uses the reader to "power the card up" 
+
+
+-----------------------------------------------
+Video: Biometrics
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:23            Biometric authentication - "something you are" 
+
+0:01:02            Good Biometric Systems Provide:
+Easy enrollment - no hassle
+Low false acceptance rates (FAR) - don't admit wrong people
+Low false rejection rates (FRR) -don't reject the wrong people
+Low intrusiveness 
+
+0:01:23            Fingerprint scans - allows self-enrollment 
+
+0:01:37            Eye scans - iris color patterns and/or retina blood vessels
+- highly intrusive 
+
+0:02:03            Voiceprint - speak a phrase, subject to replay attacks 
+
+0:02:15            facial rec                     
+
+0:02:31            Other bio techniques:
+vein analysis, hand geometry analysis, gait (walking) analysis 
+
+
+***********************************************
+Chapter: 2. Authentication
+***********************************************
+
+
+-----------------------------------------------
+Video: Authentication factors
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:35            authentication factors: something you ... know, have, are 
+
+0:00:50            Something you know - normally a password 
+
+0:01:15            Passphrases are usually stronger than passwords 
+
+0:01:30            Something you are - biometric  
+
+0:01:43            Something you have - physical possession of a device 
+
+0:02:18            Authentication attributes include - somewhere you are(geolocation), something you do, something you exhibit(behavior), someone you know(vouching) 
+
+0:02:41            authentication attributes are not widely accepted 
+
+0:03:44            basic errors:
+1. false acceptance - misidentification of unauthorized
+FAR
+2. false rejection - incorrectly denied (FRR) 
+
+0:04:14            FAR and FRR are not good measure on their own. 
+
+0:04:33            Crossover error rate (CER)- where FRR and FAR meet 
+
+
+-----------------------------------------------
+Video: Multifactor authentication
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:27            Multifactor authentication - using more than one authentication factors 
+
+0:02:33            MFA uses at least two different auth factors 
+
+
+-----------------------------------------------
+Video: Password authentication protocols
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:04            Password auth protocol - shared secret, with password. Doesn't use encryption, so insecure 
+
+0:02:37            Challenge handshake authentication protocol - more secure
+- has shared secret, transmits hash values instead of secret 
+
+0:02:48            CHAP never transmits secrets over the network 
+
+0:03:07            MS-CHAP and v2, created by Microsoft, are considered insecure 
+
+
+-----------------------------------------------
+Video: Single sign-on and federation
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:25            Federation and Single Sign On makes signing in easier 
+
+0:00:53            Federated Identity Management
+- share identity information
+- ex. Google, Facebook, Twitter 
+
+0:01:14            Single Sign-On - avoids logging in multiple times 
+
+0:02:01            Shibboleth - example of federated 
+
+0:02:13            Trust has direction and transitivity 
+
+0:02:29            Direction - one-way or two-way 
+
+0:02:56            Transitivity - trust transfers across domains just like in math 
+
+
+-----------------------------------------------
+Video: RADIUS and TACACS
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:25            RADIUS - remote access dial-in user service 
+
+0:00:47            used for modem pools           
+
+0:01:28            RADIUS in modern settings too. (in Wifi Enterprise with an authentication server) 
+
+0:02:06            Radius client = application server 
+
+0:02:43            RADIUS - uses UDP and unencrypted 
+
+0:02:45            TACACS = terminal access controller access control system 
+
+0:03:13            XTACACS = cisco proprietary    
+
+0:03:40            TACACS+ = similar to RADIUS, uses TCP, encrypts auth session 
+
+
+-----------------------------------------------
+Video: Kerberos and LDAP
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:11            Kerberos - one of the core protocols of MS active directory 
+
+0:00:28            Kerberos - ticket-based auth system, uses tickets to gain access to distributed services 
+
+0:02:04            Kerberos Process:
+1. Client provides username/password then sends to server
+2. Session key
+3. Ticket Granting Ticket
+4. If client wants to use a service, client sends TGT and authenticator 
+
+0:04:09            LDAP - used by microsoft, to query info stored in a directory service 
+
+0:04:41            Kerberos - uses port 88
+LDAP - port 389, 636(secure)
+NTLM - older tech from Microsoft 
+
+0:05:09            NTLM is vulnerable to pass the hash 
+
+
+-----------------------------------------------
+Video: SAML
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:10            SAML - security assertion markup language. allows SSO within a web browser 
+
+0:02:07            XHTML is what SAML uses        
+
+
+-----------------------------------------------
+Video: OAuth and OpenID Connect
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:02:15            OpenID Connect is an authentication protocol 
+
+0:02:20            OAuth is an authorization protocol 
+
+
+-----------------------------------------------
+Video: Certificate-based authentication
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:27            Digital Certs may be used for authentication, like a signed copy of a public key 
+
+
+***********************************************
+Chapter: 3. Authorization
+***********************************************
+
+
+-----------------------------------------------
+Video: Understanding authorization
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:03:34            Least Privileges, Separation of Duties, Account Review to limit privilege creep 
+
+
+-----------------------------------------------
+Video: Mandatory access controls
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:36            Mandatory Access Control - OS restricts auths based on labels and users 
+
+0:01:31            Classified information - can be top secret, secret, and confidential 
+
+0:02:34            SELinux provides MAC functionality 
+
+
+-----------------------------------------------
+Video: Discretionary access controls
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:38            Discretionary Access Control - permissions can be set by the owners of files, computers and other resources (think of chmod) 
+
+
+-----------------------------------------------
+Video: Access control lists
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:30            Access control lists - table containing usernames and access controls 
+
+
+-----------------------------------------------
+Video: Advanced authorization concepts
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:41            Implicit Deny - anything not explicitly allowed must be denied e.g. firewalls 
+
+0:01:39            Role-based access control systems - permissions are grouped together into functional roles 
+
+0:03:27            abac - attribute based access control - based upon attributes e.g. access based on situations such as time etc 
+
+0:03:41            location-based control - based upon geographic location 
+
+0:04:02            time-of-day restriction limits after-hour uses 
+
+
+***********************************************
+Chapter: 4. Account Management
+***********************************************
+
+
+-----------------------------------------------
+Video: Account types
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:32            Privileged accounts should not be used for routine activities 
+
+
+-----------------------------------------------
+Video: Password policy
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:49            Passwords > 8 characters, complex (allowed but not required) 
+
+0:02:07            Current NIST guidance says not to force changing passwords (no expiration) 
+
+0:02:38            Password recovery - self-service based 
+
+
+-----------------------------------------------
+Video: Managing roles
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:52            Roles - assignment of permissions to users, replace the need for shared accounts 
+
+
+-----------------------------------------------
+Video: Account monitoring
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:44            User account audits - prevent inaccurate permissions 
+
+0:01:17            attestation - formal approval of user privileges 
+
+0:01:41            unauthorized use - illegitimate use of accounts 
+
+0:02:39            Access policy violations red flags: impossible travel time logins, unusual network location logins, unusual time-of-day, deviations from normal behavior, data transferred 
+
+0:03:02            geotagging - tags logs with user location 
+
+
+-----------------------------------------------
+Video: Privileged access management
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:26            privileged access management - uses password vaulting and command proxying 
+
+0:01:43            password vaulting - store administrative passwords so you can log users using privileged accounts 
+
+0:02:03            credential management - rotates credentials and keys 
+
+0:02:23            privileged account management solutions should provide an emergency access workflow 
+
+
+-----------------------------------------------
+Video: Provisioning and deprovisioning
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:02:10            incorrectly timed accoutn revocations - may inform a user in advance of pending termination 
+

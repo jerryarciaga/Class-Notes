@@ -1,0 +1,209 @@
+Course Title: CompTIA Security+ (SY0-601) Cert Prep: 6 Cloud Security Design and Implementation
+
+Description: In some respects, securing the cloud involves the same goals you'd see in any information security initiative. But since dealing with cloud providers alters the way that you work with security controls, security professionals must have a solid grasp of cloud security in order to effectively protect the confidentiality and integrity of their organization's information. In this course, the sixth installment in the CompTIA Security+ (SY0-601) Cert Prep series, explore the world of cloud security as you prepare for the Security+ exam. Instructor Mike Chapple covers virtualization; the building blocks of the cloud, including cloud storage, networking, and orchestration; cloud activities and the cloud reference architecture; and much more.We are a CompTIA Partner. As such, we are able to offer CompTIA exam vouchers at a 10% discount. For more information on how to obtain this discount, please download these PDF instructions.
+
+
+***********************************************
+Chapter: 1. Cloud Computing
+***********************************************
+
+
+-----------------------------------------------
+Video: What is the cloud?
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:49            cloud computing: using computing resources over a remote network 
+
+0:01:19            examples: google, amazon(aws)  
+
+
+-----------------------------------------------
+Video: Cloud computing roles
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:57            cloud service provider - offers cloud computing services for sale to third parties
+
+cloud customers - purchases cloud computing services 
+
+0:01:48            cloud service partners - provides add-on services, example: apps and security functions 
+
+
+-----------------------------------------------
+Video: Drivers for cloud computing
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:04            cloud access security broker - provides identity access management 
+
+0:01:19            scalability - increasing capacity within demand 
+
+0:01:58            horizontal scaling - adds more servers to the pool to meet increased demand
+
+vertical scaling - adds more capacity/specs to the hardware 
+
+0:02:22            elasticity - expanding and contracting quickly (more like automatically) 
+
+
+-----------------------------------------------
+Video: Multitenant computing
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:14            multitenancy - shared computing resources 
+
+0:00:46            isolation - customers are independent of each other/users don't impact each other 
+
+0:01:25            oversubscription - sold capacity exceeds usage 
+
+0:01:53            resource pooling - cpu and memory shared among users 
+
+
+***********************************************
+Chapter: 2. Virtualization
+***********************************************
+
+
+-----------------------------------------------
+Video: Virtualization
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:02:54            type 1 hypervisor - baremetal, runs directly on hardware 
+
+0:03:14            hypervisor runs as a program (virtual box) 
+
+0:04:18            vm escape - ability to control host operating system 
+
+0:04:31            vm sprawl - unused and unmaintained servers 
+
+
+***********************************************
+Chapter: 3. Cloud Building Blocks
+***********************************************
+
+
+-----------------------------------------------
+Video: Cloud storage
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:49            block storage - allocates storage
+
+object storage - stores files as individual objects 
+
+0:01:38            object storage is much less expensive than block storage 
+
+
+-----------------------------------------------
+Video: Cloud networking
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:56            vlan - lan for cloud-based servers 
+
+
+-----------------------------------------------
+Video: Cloud orchestration
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:49            cloud orchestration - automates cloud management 
+
+0:01:13            infrastructure as code - admins should never build or manage instances manually 
+
+
+-----------------------------------------------
+Video: Containers
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:48            isolation is the most critical container security issue 
+
+
+***********************************************
+Chapter: 4. Cloud Reference Architecture
+***********************************************
+
+
+-----------------------------------------------
+Video: Cloud deployment models
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:07            hybrid cloud - both private and public 
+
+0:00:17            cloud deployment models - private, public, hybrid, community 
+
+0:00:55            private cloud - org uses their own cloud infrastructure 
+
+0:01:07            public cloud - multitenant     
+
+0:02:27            community cloud - not open to public but shared within a community (e.g. college) 
+
+
+-----------------------------------------------
+Video: Cloud service categories
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:17            XaaS - anything as a service   
+
+0:00:32            Cloud service categories: software, platform, infrastructure 
+
+0:00:46            SaaS - customer purchases an entire app 
+
+0:02:06            IaaS - customer purchases servers/storage (aws, azure, google compute engine) 
+
+0:02:30            PaaS - customer purchases app platform (good option for running code, not have to manage servers) 
+
+0:03:43            Function as a Service (FaaS) - serverless computing 
+
+
+-----------------------------------------------
+Video: Edge and fog computing
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:20            edge computing - computing on the endpoint, process data before transmitting them to the cloud 
+
+0:01:38            fog computing - collect information from sensors, process data before returning data to the cloud 
+
+
+-----------------------------------------------
+Video: Data sovereignty
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:56            data sovereignty - geographic distribution of data 
+
+0:01:23            Data is only subject to the laws where it is collected, stored or processed 
+
+0:02:20            Where cloud providers store data is important 
+
+
+-----------------------------------------------
+Video: Operational concerns in the cloud
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:52            server level agreement - requirements vendor agrees to meet 
+
+0:03:04            reversability - ability to roll back
+
+portability - ability to move workloads between cloud vendors 
+
+
+***********************************************
+Chapter: 5. Cloud Security Controls
+***********************************************
+
+
+-----------------------------------------------
+Video: Cloud application security
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:56            full disk encryption - encrypts data at rest 
+

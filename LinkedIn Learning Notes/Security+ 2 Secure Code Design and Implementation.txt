@@ -1,0 +1,55 @@
+Course Title: CompTIA Security+ (SY0-601) Cert Prep: 2 Secure Code Design and Implementation
+
+Description: Application vulnerabilities can open the floodgates to all manner of malicious attacks. Cybersecurity professionals must be equipped with a robust understanding of the risks associated with application vulnerabilities, as well as the coding practices that can help developers create truly secure applications. In this course, the second installment in the CompTIA Security+ (SY0-601) Cert Prep series, dive into the topic of secure coding design and implementation as you prepare for the Security+ exam. Instructor Mike Chapple goes over the software development lifecycle, covering different software development methodologies, change management processes, and the security implications of the DevOps movement. He also goes over software quality assurance, top web security vulnerabilities to watch out for, and key coding practices that developers can leverage to protect data.We are a CompTIA Partner. As such, we are able to offer CompTIA exam vouchers at a 10% discount. For more information on how to obtain this discount, please download these PDF instructions.
+
+
+***********************************************
+Chapter: 2. Software Quality Assurance
+***********************************************
+
+
+-----------------------------------------------
+Video: Code review
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:55            Fagan - follow a formalized, six step process 
+
+
+-----------------------------------------------
+Video: Fuzz testing
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:06:28            Fuzzing - testing with different inputs 
+
+
+-----------------------------------------------
+Video: Code repositories
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:16            Code Repositories:
+-Store software source code files
+-Coordinate changes among multiple devs
+-Perform version control
+-Promote code reuse 
+
+0:05:44            Public code repositories create potential disclosure issues 
+
+0:06:54            Secure code management in version control:
+- Integrity measurement: verifies release code is unchanged 
+
+
+-----------------------------------------------
+Video: Application management
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:21            Application control: restricts software to run 
+
+0:00:56            Whitelisting: apps that users may run on a system
+Blacklisting: apps that are prohibited on a system 
+
+0:01:21            in Windows, there is something called Group Policy Management 
+

@@ -1,0 +1,312 @@
+Course Title: CompTIA Security+ (SY0-601) Cert Prep: 3 Cryptography Design and Implementation
+
+Description: Prepare for the CompTIA Security+ exam, the leading certification for a career in information security. The latest version, SY0-601, expands coverage of cybersecurity threats, risk management, and IoT threats. This course prepares exam candidates for the third domain of the exam, Cryptography Design and Implementation. Topics include encryption, symmetric and asymmetric cryptography, and key management. Instructor Mike Chapple—an experienced IT leader—also dives into digital signatures, cryptanalytic attacks, and cryptographic applications.We are a CompTIA Partner. As such, we are able to offer CompTIA exam vouchers at a 10% discount. For more information on how to obtain this discount, please download these PDF instructions.
+
+
+***********************************************
+Chapter: 1. Encryption
+***********************************************
+
+
+-----------------------------------------------
+Video: The cryptographic lifecycle
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:55            Phases of and Encryption Algorithm from NIST
+1. Initiation
+2. Development and Acquisition
+3. Implementation and Assessment
+4. Operations and Maintenance
+5. Sunset 
+
+
+***********************************************
+Chapter: 2. Symmetric Cryptography
+***********************************************
+
+
+-----------------------------------------------
+Video: Data Encryption Standard (DES)
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:35            DES(data encryption standard) -- not considered secure 
+
+0:02:48            DES is symmetric, block cipher (64-bit), key length of 56 bits and considered insecure 
+
+
+-----------------------------------------------
+Video: 3DES
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:19            3DES -- 3 x DES (3 rounds, 3 keys) 
+
+
+-----------------------------------------------
+Video: AES, Blowfish, and Twofish
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:04:13            AES (advanced encryption algorithm) block, symmetric, replaced des and 3des, key length 128, 192, 256 bits 
+
+0:05:01            blowfish - not considered secure 
+
+
+-----------------------------------------------
+Video: RC4
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:36            RC4 is for network encryption schemes 
+
+0:00:54            Rc4 is used for wep, wpa, ssl and tls 
+
+0:01:24            Rc4 is no longer considered secure 
+
+
+***********************************************
+Chapter: 4. Key Management
+***********************************************
+
+
+-----------------------------------------------
+Video: Key stretching
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:27            Password-Based Key Derivation Function v2 (PBKDF2) 
+
+0:01:27            Key stretching = salting +_hashing a password 
+
+
+-----------------------------------------------
+Video: Hardware security modules
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:48            Hardware Security Modules = chips designed to encrypt/decrypt and create and manage decryption keys 
+
+0:01:09            FIPS 140-2 = related cryptographic module requirements 
+
+
+***********************************************
+Chapter: 5. Public Key Infrastructure
+***********************************************
+
+
+-----------------------------------------------
+Video: Hash functions
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:58            Hash functions:
+Variable length input, fixed length output 
+
+0:02:17            Hash functions fail if they are reversible and/or not collision resistant 
+
+0:03:25            MD5 produces 128-bit hashes. not considered secure 
+
+0:03:52            Secure hash algorigthm (SHA)   
+
+0:04:38            SHA-1 and SHA-2 are insecure   
+
+0:05:41            Race Integrity Primitives Evaluation Message Digest RIPEMD 
+
+0:06:11            RIPEMD created as alternative to government sponsored hash algorithms 
+
+
+-----------------------------------------------
+Video: Digital Signature Standard
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:32            DSS - Digital signature standard, mandated by FIPS
+Approved DSS Algorithms:
+1. DSA - Digital Signature Algorithm
+2. RSA - Rivest-Shamir-Adelman - PKCS #1
+3. ECDSA 
+
+
+-----------------------------------------------
+Video: Create a digital certificate
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:34            Digtal Certs - x.509 standard  
+
+0:01:37            How to Create a Digital Cert:
+1. Create pub/pri key pair
+2. Create CSR (certificate signing request) with public key
+3. Send CSR to CA (certificate authority)
+4. If CA is 3rd party, it's also called RA (registration authority)
+5. If CA verifies requestor, CA removes pub key from CSR and turns it into a x.509 certificate
+6. CA signs using private cert and sends it back to requestor 
+
+0:03:13            Digital Certs have attributes:
+1. Pub key
+2. Expiration
+3. Common name
+4. Subject alternative name(SANs) covered by same cert 
+
+0:04:24            CSRs can be made using openssl 
+
+
+-----------------------------------------------
+Video: Revoke a digital certificate
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:30            Two ways to revoke a cert:
+1. CRL - Certificate revocation list: include serial numbers of revoked certificates
+2. OCSP - Online Certificate Status Protocol: provides real time update 
+
+0:01:38            most browsers use ocsp         
+
+
+-----------------------------------------------
+Video: Certificate stapling
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:00            Certificate stapling - reduces CA's burden
+- so you don't have to request from CA OSCP 
+
+0:02:20            Stapled certificates are often valid for 24 hours 
+
+
+-----------------------------------------------
+Video: Certificate authorities
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:52            Self-signed certificates
+issued by an internal CA 
+
+0:01:59            certificate chaining have their own CA trusted by a 3rd party CA 
+
+
+-----------------------------------------------
+Video: Certificate formats
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:36            DER
+- distinguished encoding rules 
+- most common format
+- binary format
+- der, crt, cer 
+
+0:01:18            PEM - privacy enhanced standard
+- ascii text equivalent
+- convert with openssl
+- pem or crt 
+
+0:01:58            PFX - personal information exchange
+- binary
+- windows usually 
+
+0:02:14            p7b - text equivalent of pfx certs
+- commonly used by windows systems
+- use p7b file extension 
+
+
+***********************************************
+Chapter: 6. Cryptanalytic Attacks
+***********************************************
+
+
+-----------------------------------------------
+Video: Brute force attacks
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:31            Brute force attacks are also known as known ciphertext attack 
+
+
+-----------------------------------------------
+Video: Knowledge-based attacks
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:00            Knowledge-based attacks are a little more sophisticated. Sometimes use statistical knowledge of the English Language (frequency analysis) 
+
+
+***********************************************
+Chapter: 7. Cryptographic Applications
+***********************************************
+
+
+-----------------------------------------------
+Video: TLS and SSL
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:13            Digital certs, allow secure exchange of public keys 
+
+0:00:16            SSL may or may not be used interchangeably with TLS 
+
+0:02:16            TLS - Transport Layer Security
+- not an encryption algo, only a protocol that uses other encryption algo
+1. Client sends request to server to initiate connection
+2. Once server receives it, server sends a proposed cipher suite and the server's digital cert (contains public cert) and client verifies certificate, checking for expiration and DNS matching the cert name.
+3. Client creates a session key for that one communication session. 
+
+0:02:57            Client then generates a session key, encrypts with the server public key.
+Server decrypts that with its private key, then finally they both have a communication session using that session key. After session, session key is destroyed and the process will start over if they wish to communicate again. 
+
+0:03:19            Session keys are also known as ephemeral keys 
+
+0:03:26            SSL (secure sockets layer) was used before TLS. It is insecure and should not be used. 
+
+
+-----------------------------------------------
+Video: Information rights management
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:41            IRM - information rights management
+- enforce data rights
+- provision access
+- implement access control models 
+
+0:01:31            DRM - digital rights management
+- prevent unauthorized use of their content
+- render content inaccessible for unlicensed products
+- present in books and video games and other media 
+
+0:02:09            music services also uses DRM   
+
+0:02:46            DRM in businesses:
+- protect trade secrets
+- limit redistribution
+- revoke access after expiration date 
+
+
+-----------------------------------------------
+Video: Specialized use cases
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:15            specialized crypto hardware allows operation at low-power levels 
+
+0:01:27            networked cryptography requires very low latency 
+
+
+-----------------------------------------------
+Video: Blockchain
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:00            Homomorphic encryption - encrypting data while performing computation of that data 
+
+0:00:26            blockchain - distributed, immutable ledger
+- prevents anyone from tampering with those records 
+
+0:01:14            Property ownership are a natural application for blockchain. 
+
+0:01:34            blockchain can trace materials through the supply chain 
+
+0:01:43            can also track vital records   
+

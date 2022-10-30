@@ -1,0 +1,137 @@
+Course Title: CompTIA Security+ (SY0-601) Cert Prep: 7 Endpoint Security Design and Implementation
+
+Description: Endpoints can be attractive targets for cybersecurity adversaries and entry points for network-wide threats. Consequently, security professionals must be adept at keeping these end-user devices uncompromised. In this course, explore the tools and techniques that you can use to protect end-user systems, servers, and other networked devices as you prepare for the CompTIA Security+ (SY0-601) exam. Mike Chapple guides you through security challenges, from malware prevention to threats from embedded devices like printers, HVAC systems, and game consoles. Mike covers hardware and peripheral security, data loss prevention (DLP) technology, and data encryption. Plus, look at scripting as an automation tool and explore common ways to manipulate files in the command line.We are a CompTIA Partner. As such, we are able to offer CompTIA exam vouchers at a 10% discount. For more information on how to obtain this discount, please download these PDF instructions.
+
+
+***********************************************
+Chapter: 1. Host Security
+***********************************************
+
+
+-----------------------------------------------
+Video: Operating system security
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:08:14            system hardening - remove unnecessary software, lock down host firewall configuration, disable default credentials 
+
+
+-----------------------------------------------
+Video: Malware prevention
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:03:33            signature detection - watches for known patterns of malware activity
+
+behavior detection (heuristic) - watches for anything out of normal (EDR) 
+
+
+-----------------------------------------------
+Video: Host-based network security controls
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:06:44            next generation - uses context behaviors 
+
+
+-----------------------------------------------
+Video: Data loss prevention
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:10            data loss prevention (dlp) - monitor networks for sensitive information that is unsecured, blocks transmissions and alerts administrators for violations 
+
+0:03:49            Spirion - software example of a DLP system 
+
+
+***********************************************
+Chapter: 2. Hardware Security
+***********************************************
+
+
+-----------------------------------------------
+Video: Data encryption
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:04:27            hardware security module (HSM) - dedicated hardware for encryption and decryption and safely manage encryption keys 
+
+0:04:52            trusted platform modules - bring hardware encryption to typical computers 
+
+0:05:05            self-encrypting drives - encrypts themselves 
+
+
+-----------------------------------------------
+Video: Hardware and firmware security
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:02:17            secure boot - read boot loader, compute has and decrypts boot loader signature, verify signature is accurate 
+
+
+-----------------------------------------------
+Video: Peripheral security
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:02:31            multifunction printers (mfp) kinda like the one you use in the shop 
+
+
+***********************************************
+Chapter: 4. Embedded Systems Security
+***********************************************
+
+
+-----------------------------------------------
+Video: Industrial control systems
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:02:13            scada - remote monitoring      
+
+0:03:21            dcs - focuses on controlling processes 
+
+0:03:45            plc - handles specialized input and output 
+
+
+-----------------------------------------------
+Video: Internet of Things
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:00:46            smart devices - computer controlled and network connected 
+
+
+-----------------------------------------------
+Video: Securing smart devices
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:02:54            security wrappers - vet requests for embedded systems / mini-firewall 
+
+
+-----------------------------------------------
+Video: Secure networking for smart devices
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:02            network segmentation - place network devices on places without access to others 
+
+0:01:32            network segmentation - most important control for embedded systems 
+
+0:02:14            embedded device security controls are effective for mainframes 
+
+
+-----------------------------------------------
+Video: Embedded systems
+-----------------------------------------------
+Note Time:         Note Text:                     
+
+0:01:56            system on a chip - combines processing, memory, networking and other embedded system components on a single chip 
+
+0:02:32            fpga - field-programmable gate arrays 
+
+0:03:02            RTOS - real time operating systems provide reliable and secure computing for IoT devices 
+
+0:03:40            CAN bus - controller area network - connects embedded systems 
+
